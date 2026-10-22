@@ -1,0 +1,7 @@
+{
+  "name": "miorie-bakery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "mio·rie brand landing page, connected to the existing Take App shop",
+  "scripts": { "dev": "python3 -m http.server 3000 --bind 0.0.0.0", "start": "python3 -m http.server 3000 --bind 0.0.0.0" }
+}
