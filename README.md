@@ -6,9 +6,12 @@ A responsive, dependency-free landing page and shop for mio·rie micro-boulanger
 
 From this folder, run `python3 -m http.server 3000` and open http://localhost:3000. No build step. Deploys as-is to GitHub Pages.
 
-## Page order
+## Pages
 
-Hero (auto-sliding photos; headline = Boulangerie / Pastries & Small Treats / Tiramisu) → Our story (pinned scroll chapter on the name) → Good bread takes time (zoomed crumb, story card on the right) → ingredient marquee → The bakes (everyday vs artisan comparison, artisan collection with ingredient read-more and a seasonal slot, everyday collection, pastries, tiramisu) → ordering → FAQ → contact.
+- `index.html` (shop): hero (auto-sliding photos; headline = Boulangerie / Pastries & Small Treats / Tiramisu, each with a "Shop" hover hint) → short name story (pinned; links to the full story) → ingredient marquee → Buy our bakes (four category tiles with "Shop now" hints) → Boulangerie (artisan, everyday) → Pastries → Tiramisu → ordering → FAQ → contact.
+- `story.html` (Our story): hero → name story → Good bread takes time (flour / time / craft cards with Read more) → Inside our little kitchen ribbon → Two ways we bake sourdough (everyday / artisan cards with Read more) → back to the shop.
+
+The header's "Buy our bakes" dropdown (and the phone Menu) jumps straight to Artisan, Everyday, Pastries or Tiramisu. Only each product's Order button goes to Take App.
 
 Story copy is taken verbatim from the Take App landing cards ("About mio·rie", "Good bread takes time", "Small treats, simple pleasures"). Product photos load from `cdn3.take.app`. Hero, story, kitchen-gallery and crumb photos plus two videos (financier tear, box reveal) come from the baker's own album and live in `assets/` (resized JPEGs, 540p H.264 videos that load only when scrolled into view). The "Inside our little kitchen" ribbon sits after the crumb story. Storage and reheating FAQ text is from the sourdough care-tips card.
 

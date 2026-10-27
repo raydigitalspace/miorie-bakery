@@ -22,6 +22,30 @@ const onScrollHeader = () => header.classList.toggle('scrolled', scrollY > 40);
 addEventListener('scroll', onScrollHeader, { passive: true });
 onScrollHeader();
 
+// Mobile menu: a full-screen list of links, closed by any link or Escape.
+(() => {
+  const toggle = $('[data-menu-toggle]');
+  const menu = $('#mobile-menu');
+  if (!toggle || !menu) return;
+  const set = open => {
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? 'Close' : 'Menu';
+    document.body.classList.toggle('menu-open', open);
+  };
+  toggle.addEventListener('click', () => set(menu.hidden));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) set(false); });
+})();
+
+// Close the "Buy our bakes" dropdown once a link in it is chosen.
+$$('.drop a').forEach(link => link.addEventListener('click', () => {
+  link.blur();
+  const drop = link.closest('.drop');
+  drop.style.display = 'none';
+  setTimeout(() => { drop.style.display = ''; }, 400);
+}));
+
 // Hero slideshow: crossfade with slow zoom, progress dots and a pause control.
 (() => {
   const hero = $('.hero');
@@ -29,6 +53,7 @@ onScrollHeader();
   const dotsHost = $('[data-hero-dots]');
   const caption = $('[data-hero-caption]');
   const pauseBtn = $('[data-hero-pause]');
+  if (!hero || !dotsHost || slides.length < 2) return;
   const DURATION = 6000;
   let current = 0, timer, paused = reduceMotion;
   hero.style.setProperty('--dur', DURATION + 'ms');
@@ -95,7 +120,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   const closingBg = $('.closing-bg');
 
   function setStep(step) {
-    if (chapter.dataset.step === String(step)) return;
+    if (!chapter || chapter.dataset.step === String(step)) return;
     chapter.dataset.step = step;
     steps.forEach((li, i) => {
       li.classList.toggle('active', i === step);
@@ -107,10 +132,12 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 
   function frame() {
     const vh = innerHeight;
-    const r = chapter.getBoundingClientRect();
-    const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
-    setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
-    progress.style.transform = `scaleX(${p})`;
+    if (chapter) {
+      const r = chapter.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
+      setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
+      progress.style.transform = `scaleX(${p})`;
+    }
     if (crumbImg && !reduceMotion) {
       const r = crumb.getBoundingClientRect();
       const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
@@ -127,7 +154,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); }
   }, { passive: true });
   addEventListener('resize', frame);
-  steps[0].classList.add('active');
+  steps[0]?.classList.add('active');
   frame();
 })();
 
