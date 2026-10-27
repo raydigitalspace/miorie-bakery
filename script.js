@@ -374,3 +374,9 @@ renderBag();
   }), { rootMargin: '200px 0px' });
   videos.forEach(v => io.observe(v));
 })();
+
+// Arriving from the story page with a #section link: re-align once photos above have loaded.
+if (location.hash) addEventListener('load', () => {
+  const target = document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+});

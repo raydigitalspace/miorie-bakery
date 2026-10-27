@@ -557,3 +557,12 @@ body.menu-open{overflow:hidden}
   .crumb-story.flip .crumb-panel{margin-right:0}
 }
 @media(max-width:1000px){.crumb-story.flip{grid-template-columns:1fr}.crumb-story.flip .crumb-panel{margin:-70px 0 0}}
+
+/* Story page comparison: soft links and full-story disclosures inside the cards. */
+.compare-card .disclosure.small{margin:0 0 22px}
+.compare-card .disclosure.small p{font-size:13.5px}
+.is-artisan .disclosure.small,.is-artisan .disclosure.small summary{border-color:rgba(244,240,230,.18);color:#d9cfb5}
+.is-artisan .disclosure.small p{color:#e2dccd}
+.compare-card .text-link{margin-top:auto}
+.story-page .compare{margin-bottom:0}
+.shop-anchor{display:block;scroll-margin-top:100px}
