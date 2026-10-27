@@ -8,12 +8,14 @@ From this folder, run `python3 -m http.server 3000` and open http://localhost:30
 
 ## Pages
 
-- `index.html` (shop): hero (auto-sliding photos; headline = Boulangerie / Pastries & Small Treats / Tiramisu, each with a "Shop" hover hint) → short name story (pinned; links to the full story) → ingredient marquee → Buy our bakes (four category tiles with "Shop now" hints) → Boulangerie (artisan, everyday) → Pastries → Tiramisu → ordering → FAQ → contact.
-- `story.html` (Our story): hero → name story → Good bread takes time (flour / time / craft cards with Read more) → Inside our little kitchen ribbon → Two ways we bake sourdough (everyday / artisan cards with Read more) → back to the shop.
+- `index.html` (shop): one-photo hero (cranberry crumb) → short name intro with a "Read our story" link → four brand values → Buy our bakes, grouped under Boulangerie / Pastries / Tiramisu tabs (sourdough's three promises sit at the top of Boulangerie) → kitchen polaroids → bread care → how to order → FAQ → contact → closing.
+- `story.html` (Our story): short, tidied versions of the baker's drafts: how it began, bread philosophy, kitchen polaroids, two ways we bake, small treats, tiramisu, personal touch. Each ends in a soft link to the matching bakes.
 
-The header's "Buy our bakes" dropdown (and the phone Menu) jumps straight to Artisan, Everyday, Pastries or Tiramisu. Only each product's Order button goes to Take App.
+Brand board ("Olive edition"): olive #5A5F3A, walnut #4B3621, ivory #F4F1E8; Cormorant Garamond + Montserrat. Emphasis is by colour (`.key`, `em`), not size.
 
-Story copy is taken verbatim from the Take App landing cards ("About mio·rie", "Good bread takes time", "Small treats, simple pleasures"). Product photos load from `cdn3.take.app`. Hero, story, kitchen-gallery and crumb photos plus two videos (financier tear, box reveal) come from the baker's own album and live in `assets/` (resized JPEGs, 540p H.264 videos that load only when scrolled into view). The "Inside our little kitchen" ribbon sits after the crumb story. Storage and reheating FAQ text is from the sourdough care-tips card.
+The header's "Buy our bakes" dropdown, the phone menu and the story-page buttons open the right tab and land on the products. Only each product's Order button goes to Take App.
+
+Product photos load from `cdn3.take.app`; everything else is the baker's own, resized in `assets/`.
 
 ## Ordering
 
@@ -24,7 +26,8 @@ Story copy is taken verbatim from the Take App landing cards ("About mio·rie", 
 
 ## To confirm with the baker
 
-- Fermentation time: the shop story says "an average of 40 hours", the care-tips card says "over 30 hours". The site uses 40.
+- Fermentation: the baker confirmed "averaging 40 hours" (the printed care card still says over 30).
+- Customer quotes for a reviews section, which bakes are bestsellers, and the weekly order cut-off / bake days.
 - Double Chocolate tiramisu and Basque-style cheesecakes appear in the album but not the shop; not on the site.
 
 - PayNow number / UEN and order email (only needed for on-site mode).

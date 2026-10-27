@@ -46,53 +46,6 @@ $$('.drop a').forEach(link => link.addEventListener('click', () => {
   setTimeout(() => { drop.style.display = ''; }, 400);
 }));
 
-// Hero slideshow: crossfade with slow zoom, progress dots and a pause control.
-(() => {
-  const hero = $('.hero');
-  const slides = $$('.hero-slide');
-  const dotsHost = $('[data-hero-dots]');
-  const caption = $('[data-hero-caption]');
-  const pauseBtn = $('[data-hero-pause]');
-  if (!hero || !dotsHost || slides.length < 2) return;
-  const DURATION = 6000;
-  let current = 0, timer, paused = reduceMotion;
-  hero.style.setProperty('--dur', DURATION + 'ms');
-
-  const dots = slides.map((slide, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.setAttribute('aria-label', 'Show ' + slide.dataset.caption);
-    dot.innerHTML = '<i></i>';
-    dot.addEventListener('click', () => { show(i); schedule(); });
-    dotsHost.appendChild(dot);
-    return dot;
-  });
-
-  function show(i) {
-    slides[current].classList.remove('active');
-    current = (i + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    caption.textContent = slides[current].dataset.caption;
-    dots.forEach((d, k) => {
-      d.classList.toggle('done', k < current);
-      d.classList.remove('active');
-    });
-    void dots[current].offsetWidth; // restart the fill animation
-    dots[current].classList.add('active');
-  }
-  function schedule() {
-    clearTimeout(timer);
-    hero.classList.toggle('paused', paused);
-    pauseBtn.textContent = paused ? 'Play' : 'Pause';
-    pauseBtn.setAttribute('aria-pressed', String(paused));
-    if (!paused && !document.hidden) timer = setTimeout(() => { show(current + 1); schedule(); }, DURATION);
-  }
-  pauseBtn.addEventListener('click', () => { paused = !paused; schedule(); });
-  document.addEventListener('visibilitychange', schedule);
-  show(0);
-  schedule();
-})();
-
 // Split headings into lines so each can rise into place.
 $$('.split').forEach(el => {
   el.innerHTML = el.innerHTML.split(/<br\s*\/?>/i)
@@ -104,48 +57,27 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
   }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  $$('.reveal, .split, .frame, .feature-img').forEach(el => io.observe(el));
+  $$('.reveal, .split').forEach(el => io.observe(el));
 } else {
   $$('.reveal, .split').forEach(el => el.classList.add('visible'));
 }
 
-// Scroll-driven effects: the pinned name story, crumb zoom and closing parallax.
+// Scroll-driven effects: story-page photo zoom and closing parallax.
 (() => {
-  const chapter = $('.name-chapter');
-  const steps = $$('.name-steps li');
-  const stepImgs = $$('[data-step-img]');
-  const progress = $('[data-name-progress]');
   const crumbs = $$('.crumb-image');
   const closingBg = $('.closing-bg');
-
-  function setStep(step) {
-    if (!chapter || chapter.dataset.step === String(step)) return;
-    chapter.dataset.step = step;
-    steps.forEach((li, i) => {
-      li.classList.toggle('active', i === step);
-      li.classList.toggle('past', i < step);
-    });
-    const img = stepImgs.filter(im => +im.dataset.stepImg <= step).pop();
-    stepImgs.forEach(im => im.classList.toggle('active', im === img));
-  }
-
+  if (reduceMotion || (!crumbs.length && !closingBg)) return;
   function frame() {
     const vh = innerHeight;
-    if (chapter) {
-      const r = chapter.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
-      setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
-      progress.style.transform = `scaleX(${p})`;
-    }
-    if (!reduceMotion) crumbs.forEach(crumb => {
+    crumbs.forEach(crumb => {
       const r = crumb.getBoundingClientRect();
       if (r.bottom < -200 || r.top > vh + 200) return;
       const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
       const img = $('img', crumb);
-      img.style.setProperty('--zoom', (1.45 - p * 0.4).toFixed(3));
+      img.style.setProperty('--zoom', (1.32 - p * 0.3).toFixed(3));
       img.style.setProperty('--py', (-p * 10).toFixed(2) + '%');
     });
-    if (closingBg && !reduceMotion) {
+    if (closingBg) {
       const r = closingBg.parentElement.getBoundingClientRect();
       if (r.top < vh && r.bottom > 0) closingBg.style.setProperty('--py', ((r.top / vh) * -12).toFixed(2) + '%');
     }
@@ -155,9 +87,50 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
     if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); }
   }, { passive: true });
   addEventListener('resize', frame);
-  steps[0]?.classList.add('active');
   frame();
 })();
+
+// Shop tabs: Boulangerie / Pastries / Tiramisu. Links to #artisan, #pastries and so on
+// open the right tab first, so the dropdown and story-page links land on the bakes.
+const openShopFor = (() => {
+  const tablist = $('[data-tabs]');
+  if (!tablist) return () => null;
+  const tabs = $$('[role=tab]', tablist);
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+  const select = i => {
+    tabs.forEach((tab, k) => {
+      tab.setAttribute('aria-selected', String(k === i));
+      tab.tabIndex = k === i ? 0 : -1;
+      panels[k].classList.toggle('active', k === i);
+    });
+    // Panels revealed later still need their cards shown.
+    $$('.reveal, .split', panels[i]).forEach(el => el.classList.add('visible'));
+  };
+  tablist.hidden = false;
+  tablist.closest('.shop').classList.add('tabbed');
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(i));
+    tab.addEventListener('keydown', e => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (!step) return;
+      const next = (i + step + tabs.length) % tabs.length;
+      select(next);
+      tabs[next].focus();
+    });
+  });
+  select(0);
+  return id => {
+    const target = id && document.getElementById(id);
+    const panel = target && panels.find(p => p.contains(target));
+    if (panel) select(panels.indexOf(panel));
+    return panel ? target : null;
+  };
+})();
+document.addEventListener('click', e => {
+  const link = e.target.closest('a[href*="#"]');
+  if (!link || link.pathname !== location.pathname) return;
+  openShopFor(decodeURIComponent(link.hash.slice(1)));
+});
 
 // ---------- Bag & checkout (on-site mode only) ----------
 if (CONFIG.checkout === 'onsite') {
@@ -375,8 +348,11 @@ renderBag();
   videos.forEach(v => io.observe(v));
 })();
 
-// Arriving from the story page with a #section link: re-align once photos above have loaded.
-if (location.hash) addEventListener('load', () => {
-  const target = document.getElementById(location.hash.slice(1));
-  if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
-});
+// Arriving with a #section link: open its tab and re-align once photos above have loaded.
+if (location.hash) {
+  openShopFor(location.hash.slice(1));
+  addEventListener('load', () => {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target) target.scrollIntoView({ behavior: 'instant', block: 'start' });
+  });
+}
