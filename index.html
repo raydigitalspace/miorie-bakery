@@ -8,7 +8,7 @@
 <meta property="og:title" content="mio·rie — micro-boulangerie"><meta property="og:description" content="Small-batch sourdough, pastries and tiramisu. Pickup in eastern Singapore."><meta property="og:type" content="website"><meta property="og:image" content="https://raydigitalspace.github.io/miorie-bakery/assets/img/cranberry-crumb.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/cranberry-crumb.jpg">
+<link rel="preload" as="image" href="assets/img/cranberry-crumb.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -39,13 +39,30 @@
 
 <main id="main">
 
-<section class="hero" aria-label="Welcome">
-  <img class="hero-bg" src="assets/img/cranberry-crumb.jpg" alt="" width="1350" height="1800" fetchpriority="high">
-  <div class="hero-copy">
-    <p class="eyebrow">From my home kitchen to your table</p>
-    <h1>Crafted for simple,<br><em>everyday indulgence.</em></h1>
-    <p class="hero-sub">Sourdough, small treats &amp; tiramisu · Baked to order · Pickup in eastern Singapore</p>
-    <a class="button light" href="#bakes">Buy our bakes</a>
+<!-- HERO: slow crossfade of the bakes, a small translucent panel on the left -->
+<section class="hero slideshow" aria-label="mio·rie bakes">
+  <div class="hero-slides" aria-hidden="true">
+    <figure class="hero-slide active" data-caption="Cranberry &amp; Walnut, torn open" style="--img:url('assets/img/cranberry-crumb.jpg');--pos:50% 42%"></figure>
+    <figure class="hero-slide" data-caption="Small treats, for a slow afternoon" style="--img:url('assets/img/treats-table.jpg');--pos:50% 60%"></figure>
+    <figure class="hero-slide" data-caption="Matcha-Misu" style="--img:url('assets/img/matcha-misu.jpg');--pos:50% 55%"></figure>
+    <figure class="hero-slide" data-caption="Straight from the oven" style="--img:url('assets/img/dutch-oven.jpg');--pos:50% 50%"></figure>
+    <figure class="hero-slide" data-caption="Gourmet Financiers" style="--img:url('assets/img/financier-box.jpg');--pos:50% 50%"></figure>
+    <figure class="hero-slide" data-caption="Sweet Madeleines" style="--img:url('assets/img/madeleines.jpg');--pos:50% 45%"></figure>
+  </div>
+  <div class="hero-panel">
+    <p class="eyebrow">mio·rie · micro-boulangerie</p>
+    <h1 class="hero-title">
+      <a href="#boulangerie"><small>01</small><span>Sourdough</span></a>
+      <a href="#pastries"><small>02</small><span>Small treats</span></a>
+      <a href="#tiramisu"><small>03</small><span>Little indulgence</span></a>
+    </h1>
+    <p class="hero-intro">Naturally leavened sourdough, small treats and tiramisu. Handcrafted in small batches, from my home kitchen to your table.</p>
+    <div class="hero-actions"><a class="button cream" href="#bakes">Buy our bakes</a><a class="text-link light" href="story.html">Our story</a></div>
+  </div>
+  <div class="hero-foot">
+    <p class="hero-caption" aria-live="polite" data-hero-caption>Cranberry &amp; Walnut, torn open</p>
+    <div class="hero-dots" data-hero-dots></div>
+    <button type="button" class="hero-pause" data-hero-pause aria-pressed="false">Pause</button>
   </div>
 </section>
 

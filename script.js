@@ -46,6 +46,53 @@ $$('.drop a').forEach(link => link.addEventListener('click', () => {
   setTimeout(() => { drop.style.display = ''; }, 400);
 }));
 
+// Hero slideshow: crossfade with slow zoom, progress dots and a pause control.
+(() => {
+  const hero = $('.hero');
+  const slides = $$('.hero-slide');
+  const dotsHost = $('[data-hero-dots]');
+  const caption = $('[data-hero-caption]');
+  const pauseBtn = $('[data-hero-pause]');
+  if (!hero || !dotsHost || slides.length < 2) return;
+  const DURATION = 6000;
+  let current = 0, timer, paused = reduceMotion;
+  hero.style.setProperty('--dur', DURATION + 'ms');
+
+  const dots = slides.map((slide, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', 'Show ' + slide.dataset.caption);
+    dot.innerHTML = '<i></i>';
+    dot.addEventListener('click', () => { show(i); schedule(); });
+    dotsHost.appendChild(dot);
+    return dot;
+  });
+
+  function show(i) {
+    slides[current].classList.remove('active');
+    current = (i + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    caption.textContent = slides[current].dataset.caption;
+    dots.forEach((d, k) => {
+      d.classList.toggle('done', k < current);
+      d.classList.remove('active');
+    });
+    void dots[current].offsetWidth; // restart the fill animation
+    dots[current].classList.add('active');
+  }
+  function schedule() {
+    clearTimeout(timer);
+    hero.classList.toggle('paused', paused);
+    pauseBtn.textContent = paused ? 'Play' : 'Pause';
+    pauseBtn.setAttribute('aria-pressed', String(paused));
+    if (!paused && !document.hidden) timer = setTimeout(() => { show(current + 1); schedule(); }, DURATION);
+  }
+  pauseBtn.addEventListener('click', () => { paused = !paused; schedule(); });
+  document.addEventListener('visibilitychange', schedule);
+  show(0);
+  schedule();
+})();
+
 // Split headings into lines so each can rise into place.
 $$('.split').forEach(el => {
   el.innerHTML = el.innerHTML.split(/<br\s*\/?>/i)
