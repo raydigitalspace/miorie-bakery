@@ -14,13 +14,12 @@ Story copy is taken verbatim from the Take App landing cards ("About mio·rie", 
 
 ## Ordering
 
-The bag and checkout run on the page (prices are in the HTML `data-price` attributes). Each order gets a number like `MR261026-Q4SQ`, a pickup date at least `CONFIG.leadDays` (4) days out, and an on-screen receipt.
+`CONFIG.checkout` in `script.js` picks how ordering works:
 
-To go live, deploy `backend/orders.gs` as a Google Apps Script web app on a Google Sheet (steps at the top of that file) and paste its URL into `CONFIG.orderEndpoint` in `script.js`. Orders then land in the sheet, the customer gets an emailed receipt and the baker gets a new-order email. Payment is PayNow against the order number, marked paid in the sheet. Until the endpoint is set, checkout runs in preview mode and says so on the receipt.
+- `'takeapp'` (current): every Order button opens that product in the Take App shop (`https://take.app/miorie_bakes/p/<id>`), which handles cart, payment and order records. Prices on the page mirror Take App and need updating there and here together.
+- `'onsite'` (ready for later): the page's own bag, checkout and receipt. Orders go to the Google Sheet in `backend/orders.gs` (setup steps at the top of that file; paste its URL into `CONFIG.orderEndpoint`). Before switching, give the financiers a `data-price` and flavour options (Take App only lists S$26–30 per box of 6), fill in the PayNow line, and update the ordering steps copy. For card / Apple Pay / PayNow taken at checkout, replace the sheet with Stripe Checkout.
 
 ## To confirm with the baker
 
-- Financier prices per flavour (currently Classic Sliced Almond S$26, Hojicha Black Sesame S$30, based on the shop's "S$26–30").
-- Pickup time slots in the checkout form (placeholders).
-- PayNow number / UEN (`CONFIG.paynowLine` and `PAYNOW_LINE`), and the order email address.
-- Madeleine and scone prices (shown as coming soon / seasonal drop, not purchasable yet).
+- PayNow number / UEN and order email (only needed for on-site mode).
+- Madeleine and scone prices (shown as coming soon / seasonal drop).

@@ -1,6 +1,8 @@
-// Checkout settings. Paste the Google Apps Script web-app URL (see backend/orders.gs)
-// into orderEndpoint to save orders to the order sheet; left empty, checkout runs in preview mode.
+// Checkout settings. 'takeapp': Order buttons open the product in the Take App shop.
+// 'onsite': the page's own bag and checkout; paste the Google Apps Script web-app URL
+// (see backend/orders.gs) into orderEndpoint, or orders run in preview mode.
 const CONFIG = {
+  checkout: 'takeapp',
   orderEndpoint: '',
   paynowLine: 'PayNow details will be shared here once confirmed by mio·rie.',
   leadDays: 4,
@@ -134,7 +136,15 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   frame();
 })();
 
-// ---------- Bag & checkout ----------
+// ---------- Bag & checkout (on-site mode only) ----------
+if (CONFIG.checkout === 'onsite') {
+$$('[data-onsite]').forEach(el => { el.hidden = false; });
+$$('[data-shop-link]').forEach(el => { el.hidden = true; });
+$$('a[data-add]').forEach(a => {
+  a.textContent = 'Add to bag';
+  a.setAttribute('role', 'button');
+  a.addEventListener('click', e => e.preventDefault());
+});
 const STORE_KEY = 'miorie-bag';
 let bag = [];
 try { bag = JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch { bag = []; }
@@ -321,3 +331,4 @@ function showReceipt(order, demo) {
 }
 
 renderBag();
+}

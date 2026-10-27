@@ -18,7 +18,8 @@
 <header class="header" id="top-bar">
   <a class="logo-link" href="#" aria-label="mio·rie home"><img src="https://cdn3.take.app/media/cmvek6hzd000202o28hfo0m3j.png?width=256" alt="mio·rie micro-boulangerie" width="64" height="64"></a>
   <nav aria-label="Main navigation"><a href="#story">Our story</a><a href="#bakes">The bakes</a><a href="#ordering">How to order</a><a href="#contact">Contact</a></nav>
-  <button class="bag-button" type="button" data-open-cart aria-label="Open your bag">
+  <a class="bag-button" data-shop-link href="https://take.app/miorie_bakes">Order online <span aria-hidden="true">↗</span></a>
+  <button class="bag-button" type="button" data-open-cart data-onsite hidden aria-label="Open your bag">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
     <span>Bag</span><b class="bag-count" data-bag-count>0</b>
   </button>
@@ -175,7 +176,7 @@
               <div class="product-top"><h4>Artisan Butter Loaf</h4><p class="price">S$22</p></div>
               <p class="tagline">Where rustic tradition meets everyday indulgence.</p>
               <details class="disclosure small"><summary>Read more</summary><p>A golden, crackling crust gives way to a soft, brioche-like crumb. Rich but not heavy, buttery yet unmistakably sourdough, with just a delicate kiss of honey.</p></details>
-              <button class="add" type="button" data-add>Add to bag</button>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cms3qp0h0000e0ajitpmttvv0">Order <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product reveal" data-product="fig-pecan" data-name="Rum-infused Fig &amp; Pecan" data-price="22">
@@ -184,7 +185,7 @@
               <div class="product-top"><h4>Rum-infused Fig &amp; Pecan</h4><p class="price">S$22</p></div>
               <p class="tagline">A sweet harmony of flavours.</p>
               <details class="disclosure small"><summary>Read more</summary><p>Robustly textured, with pockets of naturally sweet figs against the earthy pecans, rounded off with a rustic sourdough tang.</p></details>
-              <button class="add" type="button" data-add>Add to bag</button>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmupwnyan000106mvrcx2t88v">Order <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product seasonal reveal" aria-label="Seasonal releases">
@@ -209,7 +210,7 @@
               <div class="product-top"><h4>Country Loaf</h4><p class="price">S$15</p></div>
               <p class="tagline">The cornerstone of artisan baking. Pure, simple, and timeless.</p>
               <details class="disclosure small"><summary>Read more</summary><p>Earthy, mildly tangy, and exceptionally versatile. The ultimate everyday canvas: stack your favourite toppings for an open-faced creation, grill a cheese sandwich to perfection, or keep it simple with local kaya toast.</p></details>
-              <button class="add" type="button" data-add>Add to bag</button>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmv9y9fv0000102mmwy2kcohm">Order <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product reveal" data-product="multiseed" data-name="Multiseed Sourdough" data-price="18">
@@ -218,7 +219,7 @@
               <div class="product-top"><h4>Multiseed Sourdough</h4><p class="price">S$18</p></div>
               <p class="tagline">The earthy daily staple, with a premium blend of toasted seeds.</p>
               <details class="disclosure small"><summary>Read more</summary><p>Rustic, earthy, with hints of toasty, savoury notes.</p></details>
-              <button class="add" type="button" data-add>Add to bag</button>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuq051ow000006p3kjpup2be">Order <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product reveal" data-product="cranberry-walnut" data-name="Cranberry &amp; Walnut" data-price="20">
@@ -227,7 +228,7 @@
               <div class="product-top"><h4>Cranberry &amp; Walnut</h4><p class="price">S$20</p></div>
               <p class="tagline">A rustic classic that brings vibrant textures to your table.</p>
               <details class="disclosure small"><summary>Read more</summary><p>Wholesome, earthy with a pop of tart sweetness, and perfect for a breakfast toast.</p></details>
-              <button class="add" type="button" data-add>Add to bag</button>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuptzfdh000906ldlbgw5kec">Order <span aria-hidden="true">↗</span></a>
             </div>
           </article>
           <article class="product reveal" data-product="jalapeno-cheese" data-name="Jalapeño &amp; Cheese" data-price="23">
@@ -236,7 +237,7 @@
               <div class="product-top"><h4>Jalapeño &amp; Cheese</h4><p class="price">S$23</p></div>
               <p class="tagline">A savoury crowd-pleaser with a little heat.</p>
               <details class="disclosure small"><summary>Read more</summary><p>Loaded with sharp Vintage Cheddar and mellow Red Leicester, folded with jalapeño slices for a tangy kick of mild heat in every bite.</p></details>
-              <button class="add" type="button" data-add>Add to bag</button>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuq1bjw5000506owyvha5i41">Order <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
@@ -257,19 +258,15 @@
         </div>
       </div>
       <div class="product-grid">
-        <article class="product reveal" data-product="financiers" data-name="Gourmet Financiers (box of 6)" data-price="26">
+        <article class="product reveal" data-product="financiers" data-name="Gourmet Financiers (box of 6)">
           <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvfozp7y000002qs2ar2chce.png?width=900" alt="A box of six financiers with two on a plate" width="1086" height="1448"><figcaption>Browned butter · crisp edges · tender centre</figcaption></figure>
           <div class="product-body">
-            <div class="product-top"><h4>Gourmet Financiers</h4><p class="price" data-price-label>S$26</p></div>
-            <p class="tagline">French almond tea cakes, in an evolving collection of flavours. Box of 6.</p>
-            <label class="option">Flavour
-              <select data-option>
-                <option value="Classic Sliced Almond" data-price="26">Classic Sliced Almond · S$26</option>
-                <option value="Hojicha Black Sesame" data-price="30">Hojicha Black Sesame · S$30</option>
-              </select>
-            </label>
-            <details class="disclosure small"><summary>Read more</summary><p><b>Classic Sliced Almond</b>: timeless, delicately crisp. <b>Hojicha Black Sesame</b>: toasty and nutty, with caramel-like complexity. Little pleasures, thoughtfully made.</p></details>
-            <button class="add" type="button" data-add>Add to bag</button>
+            <div class="product-top"><h4>Gourmet Financiers</h4><p class="price">S$26–30</p></div>
+            <p class="tagline">French almond tea cakes, in an evolving collection of flavours. Per box of 6, depending on flavours.</p>
+            <details class="disclosure small"><summary>Read more</summary><p>Made with brown butter and almond flour. Flavours rotate with the seasons:</p>
+              <ul class="flavours"><li><b>Classic Sliced Almond</b> Timeless. Delicately crisp.</li><li><b>Red Wine Fig &amp; Cream Cheese</b> Jammy sweetness with tangy, savoury depth.</li><li><b>Blueberry Walnut Crumble</b> Berry sweetness with a nutty crunch.</li><li><b>Double Chocolate Sea Salt</b> Deep, rounded chocolate notes from Valrhona cocoa and dark chocolate.</li><li><b>Matcha Raspberry</b> Earthy matcha meets bright, tart raspberry.</li><li><b>Hojicha Black Sesame</b> Toasty and nutty, with caramel-like complexity.</li><li><b>Black Forest Griottine</b> Dark chocolate and kirsch-infused wild cherries.</li></ul>
+              <p class="note">Boxes of 6, 10 or 12 · Contains wheat, eggs, milk, nuts and sesame, depending on flavour.</p></details>
+            <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuai439300030agmkaaqby3f">Order <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article class="product reveal" data-product="madeleines" data-name="Sweet Madeleines">
@@ -277,7 +274,8 @@
           <div class="product-body">
             <div class="product-top"><h4>Sweet Madeleines</h4><p class="price muted">Coming soon</p></div>
             <p class="tagline">A French classic with thoughtful flavour pairings. Boxes of 6, 10 or 12.</p>
-            <details class="disclosure small"><summary>Read more</summary><p>Made for a quiet afternoon pause, best savoured alongside your favourite brew.</p></details>
+            <details class="disclosure small"><summary>Read more</summary><p>Fragrant tea notes, rich chocolate and bright fruit, made for a quiet afternoon pause.</p>
+              <ul class="flavours"><li><b>Classic Almond</b> A timeless classic, topped with almond flakes.</li><li><b>Raspberry Pistachio</b> Whole raspberry, finished with crushed pistachios.</li><li><b>Matcha Cranberry</b> Earthy matcha sponge with tart cranberries.</li><li><b>Dark Chocolate Cherry</b> Dark chocolate sponge with kirsch-infused cherries.</li><li><b>Earl Grey &amp; Dulcey</b> <i>Seasonal.</i> Bergamot sponge in Valrhona Dulcey blond chocolate, with crushed pecans.</li><li><b>Double Raspberry</b> <i>Seasonal.</i> Raspberry sponge in Valrhona raspberry couverture, finished with rose petals.</li></ul></details>
             <button class="add" type="button" disabled>Available soon</button>
           </div>
         </article>
@@ -315,7 +313,7 @@
               <p>Rich yet delicate, the mellow bitterness of coffee balances the gentle sweetness of the cream, while a warm whisper of dark rum adds depth. Finished with a generous dusting of dark Valrhona cocoa.</p>
               <p class="note">12 oz tub · Contains alcohol, wheat, dairy and eggs.</p>
             </details>
-            <button class="add" type="button" data-add>Add to bag</button>
+            <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuah3wij000a0agmv6senc8r">Order <span aria-hidden="true">↗</span></a>
           </div>
         </article>
         <article class="product reveal" data-product="tiramisu-matcha" data-name="Matcha-Misu" data-price="20">
@@ -328,7 +326,7 @@
               <p>Earthy and gently bittersweet, with subtle umami notes rounding off the richness of the cream. Each spoonful brings a quiet balance of depth and lightness, finished with a fine dusting of matcha.</p>
               <p class="note">12 oz tub · Contains wheat, dairy and eggs.</p>
             </details>
-            <button class="add" type="button" data-add>Add to bag</button>
+            <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuahy18h00000agm1t0zv2gr">Order <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       </div>
@@ -342,18 +340,18 @@
     <p class="eyebrow">From our kitchen to your table</p>
     <h2 class="split">Ordering, in<br><em>three quiet steps.</em></h2>
     <div class="steps">
-      <div class="reveal"><span>01</span><h3>Fill your bag</h3><p>Choose your loaves and treats above. Everything is baked to order in small batches.</p></div>
+      <div class="reveal"><span>01</span><h3>Fill your bag</h3><p>Choose your loaves and treats above, then tap Order to add them in our shop. Everything is baked to order in small batches.</p></div>
       <div class="reveal"><span>02</span><h3>Pick a collection day</h3><p>Sourdough takes time, so please allow about four days from order to pickup.</p></div>
-      <div class="reveal"><span>03</span><h3>Pay &amp; collect</h3><p>Pay by PayNow with your order number. Your receipt arrives by email, and you collect in eastern Singapore.</p></div>
+      <div class="reveal"><span>03</span><h3>Pay &amp; collect</h3><p>Check out and pay in our shop, then collect in eastern Singapore. Pickup details come with your order confirmation.</p></div>
     </div>
-    <button class="button" type="button" data-open-cart>View your bag</button>
+    <a class="button" href="https://take.app/miorie_bakes">Visit our shop ↗</a>
   </div>
 </section>
 
 <section class="faq wrap">
   <div class="reveal"><p class="eyebrow">A few things to know</p><h2>Before you order.</h2></div>
   <div class="questions">
-    <details><summary>How far ahead should I order?</summary><p>For sourdough, please allow about four days from order to pickup. The earliest available date is shown at checkout.</p></details>
+    <details><summary>How far ahead should I order?</summary><p>For sourdough, please allow about four days from order to pickup. Available dates are shown at checkout.</p></details>
     <details><summary>Where do I collect my bakes?</summary><p>Pickup is in eastern Singapore. The exact address is sent with your order confirmation.</p></details>
     <details><summary>Are all the treats available every week?</summary><p>Sourdough and tiramisu are baked to order. Madeleines and savoury scones are seasonal drops, announced here and on our shop.</p></details>
     <details><summary>Where can I check ingredients or allergens?</summary><p>Each bake’s “Read more” lists its key ingredients. If you have an allergy or dietary question, please contact us before ordering.</p></details>
@@ -383,7 +381,8 @@
   <small>© <span id="year">2026</span> mio·rie</small>
 </footer>
 
-<button class="mobile-bag button" type="button" data-open-cart>Your bag · <span data-bag-total>S$0</span></button>
+<a class="mobile-bag button show" data-shop-link href="https://take.app/miorie_bakes">Order online ↗</a>
+<button class="mobile-bag button" type="button" data-open-cart data-onsite hidden>Your bag · <span data-bag-total>S$0</span></button>
 
 <!-- BAG + CHECKOUT DRAWER -->
 <div class="drawer-scrim" data-close-cart hidden></div>

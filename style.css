@@ -372,3 +372,11 @@ details[open] .disclosure-body,details[open]>p{animation:fade-down .5s var(--eas
   .hero-slide{transform:none}
   .crumb-image img{transform:scale(1.25)}
 }
+
+/* Take App mode: Order links share the bag-button and add-button styling. */
+[hidden]{display:none!important}
+a.add{display:block;text-align:center}
+a.bag-button span{font-size:13px;letter-spacing:0}
+.flavours{list-style:none;margin:12px 0 0;padding:0;font-size:13px;color:var(--muted)}
+.flavours li{padding:7px 0;border-top:1px solid var(--line)}
+.flavours b{display:block;font-weight:400;color:var(--ink)}
