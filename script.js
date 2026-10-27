@@ -327,3 +327,22 @@ function showReceipt(order, demo) {
 
 renderBag();
 }
+
+// Videos load only when they come near the screen, and pause when they leave it.
+(() => {
+  const videos = $$('[data-lazy-video]');
+  if (!videos.length) return;
+  const start = video => {
+    if (!video.dataset.loaded) {
+      $$('source', video).forEach(s => { s.src = s.dataset.src; });
+      video.load();
+      video.dataset.loaded = '1';
+    }
+    if (!reduceMotion) video.play().catch(() => {});
+  };
+  if (!('IntersectionObserver' in window)) { videos.forEach(start); return; }
+  const io = new IntersectionObserver(entries => entries.forEach(entry => {
+    entry.isIntersecting ? start(entry.target) : entry.target.pause();
+  }), { rootMargin: '200px 0px' });
+  videos.forEach(v => io.observe(v));
+})();

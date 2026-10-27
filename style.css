@@ -425,3 +425,34 @@ a.bag-button span{font-size:13px;letter-spacing:0}
 .swipe-hint:after{content:'';width:34px;height:1px;background:currentColor;animation:nudge 2.4s var(--ease) infinite}
 @keyframes nudge{50%{transform:translateX(8px)}}
 @media(max-width:760px){.swipe-hint{display:flex}}
+
+/* Inside our kitchen: a slow, endless ribbon of process photos. */
+.kitchen{padding:clamp(80px,9vw,130px) 0 clamp(50px,6vw,80px);overflow:hidden}
+.kitchen-head{margin-bottom:44px}
+.kitchen-track{display:flex;width:max-content;animation:ribbon 70s linear infinite}
+.kitchen-track:hover{animation-play-state:paused}
+.kitchen-row{display:flex;gap:22px;padding-right:22px}
+.kitchen figure{position:relative;margin:0;width:clamp(200px,22vw,300px);padding:12px;background:var(--paper);flex:none}
+.kitchen figure:nth-child(even){transform:translateY(34px)}
+.kitchen img{width:100%;aspect-ratio:3/4;transition:transform 1.2s var(--ease-out)}
+.kitchen figure:hover img{transform:scale(1.04)}
+.kitchen figcaption{margin-top:12px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive)}
+@keyframes ribbon{to{transform:translateX(-50%)}}
+
+/* Videos sit in the same frames as photos. */
+.frame video,.feature-img video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--paper);transition:transform 1.4s var(--ease-out)}
+.feature-img.is-video video{aspect-ratio:4/5;max-height:78vh}
+.feature:has(.is-video){grid-template-columns:.8fr 1.2fr}
+.motion .frame video,.motion .feature-img video{transform:scale(1.15)}
+.motion .visible .frame video,.motion .visible .feature-img video{transform:scale(1)}
+.contact-links{display:flex;gap:34px;justify-content:center;flex-wrap:wrap}
+.footer .text-link{font-size:10px}
+@media(max-width:760px){
+  .kitchen-head{margin-bottom:30px}
+  .kitchen figure{width:62vw;padding:9px}
+  .kitchen figure:nth-child(even){transform:translateY(20px)}
+  .kitchen-track{animation-duration:55s}
+  .feature:has(.is-video){grid-template-columns:1fr}
+  .feature-img.is-video video{max-height:none}
+  .contact-links{flex-direction:column;align-items:center;gap:18px}
+}
