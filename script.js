@@ -115,8 +115,7 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   const steps = $$('.name-steps li');
   const stepImgs = $$('[data-step-img]');
   const progress = $('[data-name-progress]');
-  const crumb = $('.crumb-image');
-  const crumbImg = crumb && $('img', crumb);
+  const crumbs = $$('.crumb-image');
   const closingBg = $('.closing-bg');
 
   function setStep(step) {
@@ -138,12 +137,14 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
       setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
       progress.style.transform = `scaleX(${p})`;
     }
-    if (crumbImg && !reduceMotion) {
+    if (!reduceMotion) crumbs.forEach(crumb => {
       const r = crumb.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
       const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
-      crumbImg.style.setProperty('--zoom', (1.45 - p * 0.4).toFixed(3));
-      crumbImg.style.setProperty('--py', (-p * 10).toFixed(2) + '%');
-    }
+      const img = $('img', crumb);
+      img.style.setProperty('--zoom', (1.45 - p * 0.4).toFixed(3));
+      img.style.setProperty('--py', (-p * 10).toFixed(2) + '%');
+    });
     if (closingBg && !reduceMotion) {
       const r = closingBg.parentElement.getBoundingClientRect();
       if (r.top < vh && r.bottom > 0) closingBg.style.setProperty('--py', ((r.top / vh) * -12).toFixed(2) + '%');

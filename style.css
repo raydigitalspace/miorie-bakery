@@ -517,3 +517,43 @@ body.menu-open{overflow:hidden}
   .story-hero{align-items:flex-end;min-height:84svh;padding-bottom:40px}
   .story-title{font-size:38px}
 }
+
+/* Header: logo left, navigation centred, phone controls right. */
+.header{display:grid;grid-template-columns:1fr auto 1fr;justify-content:initial}
+.header .logo-link{grid-column:1;justify-self:start}
+.header .main-nav{grid-column:2;align-items:center}
+.nav-drop{display:flex;align-items:center}
+.header .menu-button,.header .bag-button{grid-column:3;grid-row:1;justify-self:end}
+
+/* Polaroids: white frames, a deeper bottom edge, a gentle tilt and a handwritten-style caption. */
+.kitchen figure{background:#fffdf8;padding:12px 12px 0;box-shadow:0 18px 34px -18px rgba(47,44,37,.38),0 2px 6px rgba(47,44,37,.08);transform:rotate(var(--tilt,-2deg)) translateY(var(--lift,0));transition:transform .7s var(--ease-out),box-shadow .7s var(--ease)}
+.kitchen figure:nth-child(4n+1){--tilt:-2.5deg}
+.kitchen figure:nth-child(4n+2){--tilt:1.8deg;--lift:26px}
+.kitchen figure:nth-child(4n+3){--tilt:-1deg;--lift:8px}
+.kitchen figure:nth-child(4n){--tilt:2.6deg;--lift:30px}
+.kitchen figure:nth-child(even){transform:rotate(var(--tilt,-2deg)) translateY(var(--lift,0))}
+.kitchen figure:hover{transform:rotate(0) translateY(-6px) scale(1.03);box-shadow:0 30px 50px -20px rgba(47,44,37,.45);z-index:2}
+.kitchen figure:hover img{transform:none}
+.kitchen img{aspect-ratio:1/1.08}
+.kitchen figcaption{margin:0;padding:14px 4px 18px;text-align:center;font:italic 400 19px/1.25 var(--serif);letter-spacing:0;text-transform:none;color:var(--ink)}
+.kitchen-row{gap:34px;padding:24px 34px 60px 0}
+.kitchen{background:var(--paper)}
+.story-page .kitchen{background:var(--paper)}
+@media(max-width:760px){
+  .kitchen figure{width:58vw;padding:9px 9px 0}
+  .kitchen figcaption{font-size:16px;padding:10px 2px 13px}
+  .kitchen-row{gap:22px;padding:18px 22px 44px 0}
+  .kitchen figure:nth-child(even){transform:rotate(var(--tilt,-2deg)) translateY(var(--lift,0))}
+}
+
+/* Story page: alternate the image side, Marymount-style. */
+.crumb-story.flip{grid-template-columns:.9fr 1.1fr}
+.crumb-story.flip .crumb-image{order:2}
+.crumb-story.flip .crumb-panel{margin-left:0;margin-right:-14%}
+.story-page .crumb-story{background:var(--cream)}
+.crumb-panel .button{margin-top:6px}
+@media(max-width:1000px){
+  .crumb-story.flip .crumb-image{order:0}
+  .crumb-story.flip .crumb-panel{margin-right:0}
+}
+@media(max-width:1000px){.crumb-story.flip{grid-template-columns:1fr}.crumb-story.flip .crumb-panel{margin:-70px 0 0}}
