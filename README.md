@@ -8,8 +8,8 @@ From this folder, run `python3 -m http.server 3000` and open http://localhost:30
 
 ## Pages
 
-- `index.html` (shop): slideshow hero (Sourdough / Small treats / Little indulgence) → short name intro with a "Read our story" link → four brand values → Explore our bakes, grouped under Boulangerie / Pastries / Tiramisu tabs (sourdough's three promises sit at the top of Boulangerie) → kitchen polaroids → bread care → how to order → FAQ → contact → closing.
-- `story.html` (Our story): short, tidied versions of the baker's drafts: how it began, bread philosophy, kitchen polaroids, two ways we bake, small treats, tiramisu, personal touch. Each ends in a soft link to the matching bakes.
+- `index.html` (shop): slideshow hero (Sourdough / Small treats / Little indulgence) → short name intro with a "Read our story" link → four brand values → Explore our bakes, grouped under Boulangerie / Pastries / Tiramisu tabs (sourdough's three promises sit at the top of Boulangerie) → photo ribbon of the bakes (no frames or captions) → bread care → how to order → FAQ → contact → closing.
+- `story.html` (Our story): short, tidied versions of the baker's drafts: how it began, bread philosophy, kitchen photo ribbon, two ways we bake, small treats, tiramisu, personal touch. Each ends in a soft link to the matching bakes.
 
 Brand board ("Olive edition"): olive #5A5F3A, walnut #4B3621, ivory #F4F1E8; Cormorant Garamond + Montserrat. Emphasis is by colour (`.key`, `em`), not size.
 

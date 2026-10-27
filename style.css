@@ -159,20 +159,17 @@ body.menu-open{overflow:hidden}
 .icon{width:44px;height:44px;fill:none;stroke:var(--olive);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .values-rule{max-width:760px;margin:0 auto;border:0;border-top:1px solid var(--line)}
 
-/* Inside our kitchen: polaroids on a slow ribbon. */
-.kitchen{background:var(--paper);padding:clamp(70px,8vw,110px) 0 clamp(40px,5vw,60px);overflow:hidden}
-.kitchen-head{margin-bottom:34px}
-.kitchen-track{display:flex;width:max-content;animation:ribbon 70s linear infinite}
+/* Inside our kitchen: a slow ribbon of photos, no frames or captions; the pictures speak. */
+.kitchen{background:var(--paper);padding:clamp(70px,8vw,110px) 0 clamp(50px,6vw,80px);overflow:hidden}
+.kitchen-head{margin-bottom:40px}
+.kitchen-track{display:flex;width:max-content;animation:ribbon 80s linear infinite}
 .kitchen-track:hover{animation-play-state:paused}
-.kitchen-row{display:flex;gap:34px;padding:24px 34px 60px 0}
-.kitchen figure{position:relative;margin:0;flex:none;width:clamp(190px,20vw,270px);background:var(--white);padding:11px 11px 0;box-shadow:0 18px 34px -18px rgba(75,54,33,.38),0 2px 6px rgba(75,54,33,.08);transform:rotate(var(--tilt,-2deg)) translateY(var(--lift,0));transition:transform .7s var(--ease-out),box-shadow .7s var(--ease)}
-.kitchen figure:nth-child(4n+1){--tilt:-2.5deg}
-.kitchen figure:nth-child(4n+2){--tilt:1.8deg;--lift:26px}
-.kitchen figure:nth-child(4n+3){--tilt:-1deg;--lift:8px}
-.kitchen figure:nth-child(4n){--tilt:2.6deg;--lift:30px}
-.kitchen figure:hover{transform:rotate(0) translateY(-6px) scale(1.03);box-shadow:0 30px 50px -20px rgba(75,54,33,.45);z-index:2}
-.kitchen img{width:100%;aspect-ratio:1/1.08}
-.kitchen figcaption{padding:13px 4px 16px;text-align:center;font:italic 400 17px/1.25 var(--serif);color:var(--walnut)}
+.kitchen-row{display:flex;align-items:flex-start;gap:clamp(14px,1.6vw,22px);padding:0 clamp(14px,1.6vw,22px) 30px 0}
+.kitchen figure{margin:0;flex:none;width:clamp(200px,19vw,270px);overflow:hidden;transform:translateY(var(--lift,0))}
+.kitchen figure:nth-child(3n+2){--lift:30px}
+.kitchen figure:nth-child(3n){--lift:12px}
+.kitchen img{width:100%;aspect-ratio:4/5;transition:transform 1.4s var(--ease-out)}
+.kitchen figure:hover img{transform:scale(1.05)}
 @keyframes ribbon{to{transform:translateX(-50%)}}
 
 /* The shop: grouped under tabs, two quiet columns of bakes. */
@@ -431,9 +428,9 @@ details[open]>:not(summary){animation:fade-down .5s var(--ease-out)}
   .name-lines b{color:var(--gold)}
   .name-copy .text-link{color:var(--white)}
   .values{grid-template-columns:repeat(2,1fr);row-gap:34px;width:84%}
-  .kitchen figure{width:56vw;padding:9px 9px 0}
-  .kitchen figcaption{font-size:15px;padding:10px 2px 13px}
-  .kitchen-row{gap:22px;padding:18px 22px 44px 0}
+  .kitchen figure{width:58vw}
+  .kitchen-row{padding-bottom:22px}
+  .kitchen figure:nth-child(3n+2){--lift:20px}
   .kitchen-track{animation-duration:55s}
   .tabs{gap:22px}
   .tab{font-size:9.5px;letter-spacing:.2em}
