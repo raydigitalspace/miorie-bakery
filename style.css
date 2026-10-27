@@ -331,19 +331,26 @@ details[open] .disclosure-body,details[open]>p{animation:fade-down .5s var(--eas
   .hero-title{font-size:38px}.hero-title a{gap:10px}
   .hero-foot{left:5%;right:5%;bottom:22px;gap:14px;flex-wrap:wrap}
   .hero-caption{min-width:0;font-size:14px;flex:1 0 100%}
-  .name-chapter{height:auto}
-  .name-sticky{position:relative;height:auto;grid-template-columns:1fr}
-  .name-visual{height:58vh;margin:0}
-  .name-visual img{transition:none}
-  .name-copy{padding:44px 6% 70px}
-  .name-word{font-size:84px}
-  .name-chapter .name-word span{opacity:1!important;filter:none!important}
-  .name-steps{min-height:0}
-  .name-steps li{position:static;opacity:1;transform:none;margin-bottom:18px;font-size:23px}
-  .name-progress{display:none}
+  /* Story on phones: full-screen photo stays put while the lines change over it. */
+  .name-chapter{height:380svh;background:#2c2a22}
+  .name-sticky{height:100svh;grid-template-columns:1fr;color:#fffdf7}
+  .name-visual{position:absolute;inset:0;margin:0}
+  .name-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,26,20,.92) 0%,rgba(28,26,20,.7) 42%,rgba(28,26,20,.12) 72%)}
+  .name-visual img[data-step-img="0"]{height:130%;object-position:50% 0}
+  .name-copy{position:relative;justify-content:flex-end;padding:0 7% 112px}
+  .name-copy .eyebrow{color:#e8e1cf}
+  .name-word{font-size:76px;color:#fffdf7}
+  .nw-mei,.nw-dot{color:#e2d6b8}
+  .name-say{color:#e6e0d2;font-size:18px;margin-bottom:24px}
+  .name-steps{min-height:6.2em}
+  .name-steps li{font-size:24px;color:#fffdf7}
+  .name-steps b{color:#eadfc4}
+  .name-progress{background:rgba(255,253,247,.25);margin-top:26px}
+  .name-progress span{background:#fffdf7}
   .compare,.feature,.feature.reverse{grid-template-columns:1fr}
   .feature.reverse .feature-img{order:0}
-  .compare-card dl div{grid-template-columns:1fr;gap:4px}
+  .icon-row{gap:10px}.icon-row li{font-size:9.5px;letter-spacing:.14em}
+  .compare{gap:16px}
   .category-menu{grid-template-columns:1fr}
   .category-menu a{display:grid;grid-template-columns:44px 1fr;column-gap:16px;text-align:left;padding:22px 6px}
   .category-menu a+a{border-left:0;border-top:1px solid var(--line)}
@@ -380,3 +387,41 @@ a.bag-button span{font-size:13px;letter-spacing:0}
 .flavours{list-style:none;margin:12px 0 0;padding:0;font-size:13px;color:var(--muted)}
 .flavours li{padding:7px 0;border-top:1px solid var(--line)}
 .flavours b{display:block;font-weight:400;color:var(--ink)}
+
+/* Sourdough comparison: icons carry the detail, words stay short. */
+.icon-row,.icon-list{list-style:none;margin:0;padding:0}
+.icon-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:620px;margin-top:8px}
+.icon-row li{display:flex;flex-direction:column;align-items:flex-start;gap:12px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.icon-row svg,.icon-list svg{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon-row svg{width:40px;height:40px;color:var(--olive)}
+.icon-list{margin:8px 0 30px;border-top:1px solid var(--line)}
+.icon-list li{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:20px;line-height:1.25}
+.icon-list svg{width:34px;height:34px;color:var(--olive)}
+.is-artisan .icon-list,.is-artisan .icon-list li{border-color:rgba(244,240,230,.18)}
+.is-artisan .icon-list svg{color:#d9cfb5}
+.motion .visible .icon-list li,.motion .icon-row li{animation:none}
+.motion .compare.visible .icon-list li{animation:rise .9s var(--ease-out) both}
+.motion .compare.visible .icon-list li:nth-child(2){animation-delay:.12s}.motion .compare.visible .icon-list li:nth-child(3){animation-delay:.24s}
+
+/* Story lines share one grid cell, so the block always fits the longest line. */
+.name-steps{display:grid;min-height:0!important}
+.name-steps li{grid-area:1/1;position:static}
+
+/* Phones: each collection becomes a swipeable row; the next card peeks in. */
+@media(max-width:760px){
+  .product-grid,.product-grid.two,.product-grid.four{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-6vw;padding:0 6vw 8px;scroll-padding-inline:6vw;scrollbar-width:none;overscroll-behavior-x:contain}
+  .product-grid::-webkit-scrollbar{display:none}
+  .product-grid>.product{flex:0 0 80%;scroll-snap-align:start}
+  .product-grid.four h4{font-size:24px}.product-grid.four .product-top{flex-direction:row;gap:16px}
+  .product-grid.four .frame figcaption{display:block}
+  .motion .product-grid .reveal{transition-delay:0s!important}
+
+  .seasonal-frame{min-height:0;aspect-ratio:4/5}
+  .crumb-image{height:72svh}
+  .crumb-panel{margin-top:-70px;padding:30px 24px}
+  .collection-head{margin-bottom:28px}
+}
+.swipe-hint{display:none;align-items:center;gap:10px;margin:-14px 0 18px;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--olive)}
+.swipe-hint:after{content:'';width:34px;height:1px;background:currentColor;animation:nudge 2.4s var(--ease) infinite}
+@keyframes nudge{50%{transform:translateX(8px)}}
+@media(max-width:760px){.swipe-hint{display:flex}}

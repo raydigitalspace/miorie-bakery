@@ -93,7 +93,6 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   const crumb = $('.crumb-image');
   const crumbImg = crumb && $('img', crumb);
   const closingBg = $('.closing-bg');
-  const pinned = () => matchMedia('(min-width: 761px)').matches;
 
   function setStep(step) {
     if (chapter.dataset.step === String(step)) return;
@@ -108,14 +107,10 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
 
   function frame() {
     const vh = innerHeight;
-    if (pinned()) {
-      const r = chapter.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
-      setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
-      progress.style.transform = `scaleX(${p})`;
-    } else if (chapter.dataset.step !== '4') {
-      setStep(4);
-    }
+    const r = chapter.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, -r.top / (r.height - vh)));
+    setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
+    progress.style.transform = `scaleX(${p})`;
     if (crumbImg && !reduceMotion) {
       const r = crumb.getBoundingClientRect();
       const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
