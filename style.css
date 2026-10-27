@@ -97,6 +97,14 @@ body.menu-open{overflow:hidden}
 .hero-slides{position:absolute;inset:0;z-index:-2}
 .hero-slide{position:absolute;inset:0;margin:0;background:var(--img) var(--pos,center)/cover no-repeat;opacity:0;transform:scale(1.1);transition:opacity 1.8s var(--ease),transform 9s linear}
 .hero-slide.active{opacity:1;transform:scale(1)}
+/* Wide screens: show the whole photo, framed on the right, over a soft blurred wash of itself,
+   so a portrait loaf keeps its shape instead of being cropped into a close-up. */
+@media(min-width:761px){
+  .hero-slide{background:none;overflow:hidden;transform:scale(1.04)}
+  .hero-slide:before,.hero-slide:after{content:'';position:absolute;inset:0}
+  .hero-slide:before{inset:-60px;background:var(--img) center/cover;filter:blur(34px) brightness(.72) saturate(.9)}
+  .hero-slide:after{background:var(--img) 72% 50%/var(--fit,auto 86%) no-repeat}
+}
 .hero-panel{width:min(440px,100%);padding:40px 42px 38px;background:rgba(48,38,26,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(251,249,243,.18)}
 .hero-panel .eyebrow{color:var(--gold);margin-bottom:22px}
 .hero-title{display:flex;flex-direction:column;gap:6px;margin:0 0 22px;font-size:clamp(26px,2.4vw,33px);line-height:1.5;letter-spacing:.02em}

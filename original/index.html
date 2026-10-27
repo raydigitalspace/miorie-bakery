@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mio·rie — Boulangerie, pastries & tiramisu</title>
+<meta name="description" content="Slow-fermented sourdough, French small treats and tiramisu from mio·rie, a micro-boulangerie in eastern Singapore. Order online for pickup.">
+<meta name="theme-color" content="#6f6c5a">
+<meta property="og:title" content="mio·rie — Boulangerie. Pastries & Small Treats. Tiramisu."><meta property="og:description" content="Small-batch sourdough, pastries and tiramisu. Pickup in eastern Singapore."><meta property="og:type" content="website"><meta property="og:image" content="https://cdn3.take.app/media/cmvejoqlh000602qf9iyj4bdg.png?width=1200">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../assets/img/crumb-hand.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="announcement">Small-batch bakes, worth slowing down for <span>Pickup in eastern Singapore</span></div>
+
+<header class="header" id="top-bar">
+  <a class="logo-link" href="#" aria-label="mio·rie home"><img src="https://cdn3.take.app/media/cmvek6hzd000202o28hfo0m3j.png?width=256" alt="mio·rie micro-boulangerie" width="64" height="64"></a>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="story.html">Our story</a>
+    <div class="nav-drop"><a href="#bakes">Buy our bakes <span aria-hidden="true">▾</span></a>
+      <div class="drop"><a href="#artisan">Artisan sourdough</a><a href="#everyday">Everyday sourdough</a><a href="#pastries">Pastries &amp; small treats</a><a href="#tiramisu">Tiramisu</a></div>
+    </div>
+    <a href="#ordering">How to order</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+  <button class="bag-button" type="button" data-open-cart data-onsite hidden aria-label="Open your bag">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+    <span>Bag</span><b class="bag-count" data-bag-count>0</b>
+  </button>
+</header>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
+  <a href="story.html">Our story</a>
+  <p>Buy our bakes</p>
+  <a class="sub" href="#artisan">Artisan sourdough</a><a class="sub" href="#everyday">Everyday sourdough</a><a class="sub" href="#pastries">Pastries &amp; small treats</a><a class="sub" href="#tiramisu">Tiramisu</a>
+  <a href="#ordering">How to order</a><a href="#contact">Contact</a>
+</nav>
+
+<main id="main">
+
+<!-- HERO: full-bleed slideshow of the bakes, write-up in a translucent panel on the left -->
+<section class="hero" aria-label="mio·rie bakes">
+  <div class="hero-slides" aria-hidden="true">
+    <figure class="hero-slide active" data-caption="A morning loaf, torn open" style="--img:url('../assets/img/crumb-hand.jpg');--pos:50% 45%"></figure>
+    <figure class="hero-slide" data-caption="Small treats, for a slow afternoon" style="--img:url('../assets/img/treats-table.jpg');--pos:50% 60%"></figure>
+    <figure class="hero-slide" data-caption="Rum-infused Fig &amp; Pecan" style="--img:url('../assets/img/fig-pecan.jpg');--pos:50% 55%"></figure>
+    <figure class="hero-slide" data-caption="Gourmet Financiers" style="--img:url('../assets/img/financier-box.jpg');--pos:50% 50%"></figure>
+    <figure class="hero-slide" data-caption="Straight from the oven" style="--img:url('../assets/img/dutch-oven.jpg');--pos:50% 50%"></figure>
+    <figure class="hero-slide" data-caption="Savoury Scones" style="--img:url('../assets/img/scones.jpg');--pos:50% 55%"></figure>
+    <figure class="hero-slide" data-caption="Sweet Madeleines" style="--img:url('../assets/img/madeleines.jpg');--pos:50% 45%"></figure>
+    <figure class="hero-slide" data-caption="Matcha-Misu" style="--img:url('../assets/img/matcha-misu.jpg');--pos:50% 55%"></figure>
+  </div>
+  <div class="hero-panel">
+    <p class="eyebrow">mio·rie · micro-boulangerie</p>
+    <h1 class="hero-title">
+      <a href="#boulangerie"><small>01</small><span>Boulangerie.</span></a>
+      <a href="#pastries"><small>02</small><span>Pastries &amp; Small Treats.</span></a>
+      <a href="#tiramisu"><small>03</small><span><em>Tiramisu.</em></span></a>
+    </h1>
+    <p class="hero-intro">Slow-fermented artisan and everyday sourdough, French-inspired small treats and tiramisu. Handcrafted in small batches, from my home kitchen to your table.</p>
+    <div class="hero-actions"><a class="button" href="#bakes">Buy our bakes</a><a class="text-link light" href="story.html">Our story</a></div>
+  </div>
+  <div class="hero-foot">
+    <p class="hero-caption" aria-live="polite" data-hero-caption>Artisan Butter Loaf</p>
+    <div class="hero-dots" data-hero-dots></div>
+    <button type="button" class="hero-pause" data-hero-pause aria-pressed="false">Pause</button>
+  </div>
+</section>
+
+<!-- OUR STORY: a pinned, scroll-told chapter about the name -->
+<section class="name-chapter" id="story" aria-label="About mio·rie">
+  <div class="name-sticky">
+    <div class="name-visual" aria-hidden="true">
+      <img src="../assets/img/packaging.jpg" alt="" data-step-img="0" class="active">
+      <img src="../assets/img/scored-loaf.jpg" alt="" data-step-img="2" loading="lazy">
+      <img src="../assets/img/starter.jpg" alt="" data-step-img="3" loading="lazy">
+      <img src="../assets/img/treats-table.jpg" alt="" data-step-img="4" loading="lazy">
+    </div>
+    <div class="name-copy">
+      <p class="eyebrow">Our story</p>
+      <div class="name-word" aria-hidden="true">
+        <span class="nw-mio">mio</span><span class="nw-mei">美</span><span class="nw-dot">·</span><span class="nw-rie">rie</span>
+      </div>
+      <p class="name-say">pronounced “<i>mee-oh-ree</i>”</p>
+      <ol class="name-steps">
+        <li data-step="0">Welcome to <b>mio·rie</b>, a micro-boulangerie inspired by the beauty of slow-baking.</li>
+        <li data-step="1"><b>mio (美)</b>, meaning beautiful or perfect.</li>
+        <li data-step="2"><b>rie</b>, a nod to the craft of the boulangerie.</li>
+        <li data-step="3">Every loaf, pastry and treat is handcrafted in small batches by your local boulangère, with care, intention and thoughtfully selected ingredients.</li>
+        <li data-step="4">From my home kitchen to your table, crafted for simple, everyday indulgence.</li>
+      </ol>
+      <div class="name-progress" aria-hidden="true"><span data-name-progress></span></div>
+      <a class="text-link story-more" href="story.html">Read our full story →</a>
+    </div>
+  </div>
+</section>
+
+<section class="kitchen polaroids" aria-label="Inside our kitchen">
+  <div class="wrap kitchen-head reveal"><p class="eyebrow">Inside our little kitchen</p><h2 class="split">Made by hand,<br><em>one small batch at a time.</em></h2></div>
+  <div class="kitchen-track"><div class="kitchen-row"><figure><img loading="lazy" src="../assets/img/starter.jpg" alt="Naturally leavened" width="675" height="900"><figcaption>Naturally leavened</figcaption></figure><figure><img loading="lazy" src="../assets/img/rising.jpg" alt="40 hours, never rushed" width="675" height="900"><figcaption>40 hours, never rushed</figcaption></figure><figure><img loading="lazy" src="../assets/img/crumb-held.jpg" alt="European flours, spelt and rye" width="675" height="900"><figcaption>European flours, spelt &amp; rye</figcaption></figure><figure><img loading="lazy" src="../assets/img/dutch-oven.jpg" alt="Out of the oven" width="675" height="900"><figcaption>Out of the oven</figcaption></figure><figure><img loading="lazy" src="../assets/img/financiers-cooling.jpg" alt="French butter, browned" width="675" height="900"><figcaption>French butter, browned</figcaption></figure><figure><img loading="lazy" src="../assets/img/madeleines-cooling.jpg" alt="French couverture chocolate" width="675" height="900"><figcaption>French couverture chocolate</figcaption></figure><figure><img loading="lazy" src="../assets/img/matcha-misu.jpg" alt="Uji matcha and hojicha" width="675" height="900"><figcaption>Uji matcha &amp; hojicha</figcaption></figure><figure><img loading="lazy" src="../assets/img/tiramisu-tubs.jpg" alt="Valrhona cocoa" width="675" height="900"><figcaption>Valrhona cocoa</figcaption></figure><figure><img loading="lazy" src="../assets/img/scone-layers.jpg" alt="Layer by layer" width="675" height="900"><figcaption>Layer by layer</figcaption></figure><figure><img loading="lazy" src="../assets/img/boxed.jpg" alt="Boxed with care" width="675" height="900"><figcaption>Boxed with care</figcaption></figure></div><div class="kitchen-row" aria-hidden="true"><figure><img loading="lazy" src="../assets/img/starter.jpg" alt="" width="675" height="900"><figcaption>Naturally leavened</figcaption></figure><figure><img loading="lazy" src="../assets/img/rising.jpg" alt="" width="675" height="900"><figcaption>40 hours, never rushed</figcaption></figure><figure><img loading="lazy" src="../assets/img/crumb-held.jpg" alt="" width="675" height="900"><figcaption>European flours, spelt &amp; rye</figcaption></figure><figure><img loading="lazy" src="../assets/img/dutch-oven.jpg" alt="" width="675" height="900"><figcaption>Out of the oven</figcaption></figure><figure><img loading="lazy" src="../assets/img/financiers-cooling.jpg" alt="" width="675" height="900"><figcaption>French butter, browned</figcaption></figure><figure><img loading="lazy" src="../assets/img/madeleines-cooling.jpg" alt="" width="675" height="900"><figcaption>French couverture chocolate</figcaption></figure><figure><img loading="lazy" src="../assets/img/matcha-misu.jpg" alt="" width="675" height="900"><figcaption>Uji matcha &amp; hojicha</figcaption></figure><figure><img loading="lazy" src="../assets/img/tiramisu-tubs.jpg" alt="" width="675" height="900"><figcaption>Valrhona cocoa</figcaption></figure><figure><img loading="lazy" src="../assets/img/scone-layers.jpg" alt="" width="675" height="900"><figcaption>Layer by layer</figcaption></figure><figure><img loading="lazy" src="../assets/img/boxed.jpg" alt="" width="675" height="900"><figcaption>Boxed with care</figcaption></figure></div></div>
+</section>
+
+<!-- THE BAKES -->
+<section class="bakes" id="bakes">
+  <div class="wrap">
+    <header class="bakes-head reveal">
+      <p class="eyebrow">Buy our bakes</p>
+      <h2 class="split">From our<br><em>little kitchen.</em></h2>
+      <p>Boulangerie at heart. Small treats for your afternoon. Tiramisu for a little indulgence.</p>
+    </header>
+    <nav class="category-menu reveal" aria-label="Bake categories">
+      <a href="#artisan"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 27c0-9 6-16 14-16s14 7 14 16c0 3-2 5-5 5H11c-3 0-5-2-5-5Z"/><path d="m14 15 3 6m3-8v8m6-6-3 6"/></svg><small>01</small><strong>Artisan sourdough</strong><span>Enriched &amp; specialty loaves</span></a>
+      <a href="#everyday"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 28c0-7 5-14 15-14s15 7 15 14c0 2-2 4-4 4H9c-2 0-4-2-4-4Z"/><path d="M12 22h16"/></svg><small>02</small><strong>Everyday sourdough</strong><span>Classic loaves for the daily table</span></a>
+      <a href="#pastries"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 24c0-6 6-11 14-11s14 5 14 11c0 4-6 7-14 7S6 28 6 24Z"/><path d="M12 18c2 3 2 7 0 11m8-15v16m8-12c-2 3-2 7 0 11"/></svg><small>03</small><strong>Pastries &amp; small treats</strong><span>Financiers, madeleines &amp; scones</span></a>
+      <a href="#tiramisu"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 15h26v17H7Z"/><path d="M7 21h26M7 26h26M10 15c1-4 4-6 10-6s9 2 10 6"/></svg><small>04</small><strong>Tiramisu</strong><span>Two expressions of a classic</span></a>
+    </nav>
+
+    <!-- 01 BOULANGERIE -->
+    <section class="category" id="boulangerie" aria-labelledby="boul-title">
+      <div class="feature reveal">
+        <figure class="feature-img"><img loading="lazy" src="../assets/img/crumb-hand.jpg" alt="A mio·rie sourdough torn open to show its open crumb" width="1350" height="1800"></figure>
+        <div class="feature-copy">
+          <p class="eyebrow">Boulangerie</p>
+          <h2 class="split" id="boul-title">Sourdough,<br><em>with character.</em></h2>
+          <p class="lede"><i>Made for those who appreciate bread with a little more character.</i></p>
+          <p>Slow-fermented for an average of 40 hours, from premium European flours and stone-ground spelt and rye. Rustic classics for the everyday, and enriched specialty bakes for a little indulgence.</p>
+          <a class="text-link" href="story.html#bread-story">Read our sourdough story →</a>
+        </div>
+      </div>
+
+      <div class="collection" id="artisan">
+        <div class="collection-head reveal">
+          <p class="eyebrow">The specialty collection</p>
+          <h3 class="collection-title">Artisan sourdough</h3>
+          <p class="collection-intro">Rustic yet luxurious, crafted with character, and a little indulgence.</p>
+          <details class="disclosure">
+            <summary>The ingredients &amp; craft behind them</summary>
+            <div class="disclosure-body">
+              <div><h4>Artisan Butter Loaf</h4><p>Enriched with eggs and French butter, our signature croissant-inspired loaf is laminated with frozen grated butter, baked to a golden crust with a soft, brioche-like crumb, and finished with just a delicate kiss of honey.</p></div>
+              <div><h4>Rum-infused Fig &amp; Pecan</h4><p>Built on our curated blend of European flours and whole grains, this loaf features a bold and beautiful pairing: sun-dried Turkish figs infused with dark rum, and house-activated pecans slow-dried and lightly toasted with butter for a clean crunch.</p></div>
+              <div><h4>The flour foundation</h4><p>Our sourdough begins with a carefully curated blend of premium European flours and stone-ground whole grains, including spelt and rye.</p></div>
+            </div>
+          </details>
+        </div>
+        <p class="swipe-hint" aria-hidden="true">Swipe</p>
+        <div class="product-grid">
+          <article class="product reveal" data-product="butter-loaf" data-name="Artisan Butter Loaf" data-price="22">
+            <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cms3qe3ho00000ajb0rvjfoza.jpeg?width=900" alt="Artisan Butter Loaf, torn open to show its soft crumb" width="812" height="1015"><figcaption>Rich but not heavy · buttery yet unmistakably sourdough</figcaption></figure>
+            <div class="product-body">
+              <div class="product-top"><h4>Artisan Butter Loaf</h4><p class="price">S$22</p></div>
+              <p class="tagline">Where rustic tradition meets everyday indulgence.</p>
+              <details class="disclosure small"><summary>Read more</summary><p>Enriched with eggs and French butter, our signature croissant-inspired loaf is laminated with frozen grated butter, baked to a golden crust with a soft, brioche-like crumb, and finished with just a delicate kiss of honey. Rich but not heavy, buttery yet unmistakably sourdough.</p><p>Crafted from a curated blend of premium European flours and whole grains, with an extended fermentation totalling over 40 hours. This prolonged cold maturation lets the live cultures work through the enriched dough, for a buttery indulgence that stays light and uniquely flavourful.</p></details>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cms3qp0h0000e0ajitpmttvv0">Order <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product reveal" data-product="fig-pecan" data-name="Rum-infused Fig &amp; Pecan" data-price="22">
+            <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvehk53m000202lyalt08qxw.jpeg?width=900" alt="Rum-infused Fig and Pecan sourdough, sliced" width="1086" height="1448"><figcaption>Sweet figs · earthy pecans · a rustic tang</figcaption></figure>
+            <div class="product-body">
+              <div class="product-top"><h4>Rum-infused Fig &amp; Pecan</h4><p class="price">S$22</p></div>
+              <p class="tagline">A sweet harmony of flavours.</p>
+              <details class="disclosure small"><summary>Read more</summary><p>Robustly textured, with pockets of naturally sweet figs against the earthy pecans, rounded off with a rustic sourdough tang.</p></details>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmupwnyan000106mvrcx2t88v">Order <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product seasonal reveal" aria-label="Seasonal releases">
+            <div class="frame seasonal-frame"><span class="seasonal-star" aria-hidden="true">✳</span><p>Seasonal &amp; festive</p></div>
+            <div class="product-body">
+              <div class="product-top"><h4>The next release</h4></div>
+              <p class="tagline">This collection grows with the seasons. Festive and limited bakes are announced here first.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="collection" id="everyday">
+        <div class="collection-head reveal">
+          <p class="eyebrow">The daily table</p>
+          <h3 class="collection-title">Everyday sourdough</h3>
+          <p class="collection-intro">Celebrating the classic tradition, time-crafted, and made for everyday enjoyment.</p>
+        </div>
+        <p class="swipe-hint" aria-hidden="true">Swipe</p>
+        <div class="product-grid four">
+          <article class="product reveal" data-product="country-loaf" data-name="Country Loaf" data-price="15">
+            <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvga03sr000202p26pfg4gki.png?width=900" alt="Country Loaf sourdough, halved" width="1086" height="1448"><figcaption>Earthy · mildly tangy · endlessly versatile</figcaption></figure>
+            <div class="product-body">
+              <div class="product-top"><h4>Country Loaf</h4><p class="price">S$15</p></div>
+              <p class="tagline">The cornerstone of artisan baking. Pure, simple, and timeless.</p>
+              <details class="disclosure small"><summary>Read more</summary><p>Earthy, mildly tangy, and exceptionally versatile. The ultimate everyday canvas: stack your favourite toppings for an open-faced creation, grill a cheese sandwich to perfection, or keep it simple with local kaya toast.</p></details>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmv9y9fv0000102mmwy2kcohm">Order <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product reveal" data-product="multiseed" data-name="Multiseed Sourdough" data-price="18">
+            <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmv9s6fn8000502m9ge42cc18.jpeg?width=900" alt="Multiseed Sourdough, halved" width="2404" height="3206"><figcaption>Rustic · toasty · savoury notes</figcaption></figure>
+            <div class="product-body">
+              <div class="product-top"><h4>Multiseed Sourdough</h4><p class="price">S$18</p></div>
+              <p class="tagline">The earthy daily staple, with a premium blend of toasted seeds.</p>
+              <details class="disclosure small"><summary>Read more</summary><p>Rustic, earthy, with hints of toasty, savoury notes.</p></details>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuq051ow000006p3kjpup2be">Order <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product reveal" data-product="cranberry-walnut" data-name="Cranberry &amp; Walnut" data-price="20">
+            <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmuptz6o7000006mocwy42fgt.jpeg?width=900" alt="Cranberry and Walnut sourdough, halved" width="2059" height="2745"><figcaption>Wholesome · a pop of tart sweetness</figcaption></figure>
+            <div class="product-body">
+              <div class="product-top"><h4>Cranberry &amp; Walnut</h4><p class="price">S$20</p></div>
+              <p class="tagline">A rustic classic that brings vibrant textures to your table.</p>
+              <details class="disclosure small"><summary>Read more</summary><p>Wholesome, earthy with a pop of tart sweetness, and perfect for a breakfast toast.</p></details>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuptzfdh000906ldlbgw5kec">Order <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="product reveal" data-product="jalapeno-cheese" data-name="Jalapeño &amp; Cheese" data-price="23">
+            <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvo2f45q001v08l92t93cflf.jpg?width=900" alt="Jalapeño and Cheese sourdough, halved" width="1086" height="1448"><figcaption>Sharp cheddar · mellow Red Leicester · mild heat</figcaption></figure>
+            <div class="product-body">
+              <div class="product-top"><h4>Jalapeño &amp; Cheese</h4><p class="price">S$23</p></div>
+              <p class="tagline">A savoury crowd-pleaser with a little heat.</p>
+              <details class="disclosure small"><summary>Read more</summary><p>Loaded with sharp Vintage Cheddar and mellow Red Leicester, folded with jalapeño slices for a tangy kick of mild heat in every bite.</p></details>
+              <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuq1bjw5000506owyvha5i41">Order <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 PASTRIES -->
+    <section class="category" id="pastries" aria-labelledby="past-title">
+      <div class="feature reveal">
+        <figure class="feature-img is-video"><video data-lazy-video muted loop playsinline preload="none" poster="../assets/video/financier-tear-poster.jpg" aria-label="A chocolate financier being torn open over a tray of financiers"><source data-src="../assets/video/financier-tear.mp4" type="video/mp4"></video></figure>
+        <div class="feature-copy">
+          <p class="eyebrow">02 · Pastries &amp; small treats</p>
+          <h2 class="split" id="past-title">Small treats.<br><em>Simple pleasures.</em></h2>
+          <p class="lede"><i>A collection of small treats, made for leisurely afternoons over your favourite brew.</i></p>
+          <p>From <b>French Gourmet Financiers</b> with their delicate browned-butter aroma and vibrant toppings, and tender <b>Sweet Madeleines</b> finished with fine chocolate, to our square-cut <b>Savoury Scones</b> featuring layers of melted cheese and fresh herbs, each brings its own quiet pleasure to the table.</p>
+          <p>Made from scratch with fine selected ingredients, including French butter, French couverture chocolate, and Uji matcha and hojicha, our bakes honour familiar traditions with a little modern creativity.</p>
+          <p class="signoff">Thoughtfully made. To savour slowly.</p>
+        </div>
+      </div>
+      <span class="shop-anchor" id="pastries-shop"></span>
+        <p class="swipe-hint" aria-hidden="true">Swipe</p>
+        <div class="product-grid">
+        <article class="product reveal" data-product="financiers" data-name="Gourmet Financiers (box of 6)">
+          <figure class="frame"><img loading="lazy" src="../assets/img/financier-box.jpg" alt="A box of eight assorted financiers" width="1350" height="1800"><figcaption>Browned butter · crisp edges · tender centre</figcaption></figure>
+          <div class="product-body">
+            <div class="product-top"><h4>Gourmet Financiers</h4><p class="price">S$26–30</p></div>
+            <p class="tagline">French almond tea cakes, in an evolving collection of flavours. Per box of 6, depending on flavours.</p>
+            <details class="disclosure small"><summary>Read more</summary><p>Made with brown butter and almond flour. Flavours rotate with the seasons:</p>
+              <ul class="flavours"><li><b>Classic Sliced Almond</b> Timeless. Delicately crisp.</li><li><b>Red Wine Fig &amp; Cream Cheese</b> Jammy sweetness with tangy, savoury depth.</li><li><b>Blueberry Walnut Crumble</b> Berry sweetness with a nutty crunch.</li><li><b>Double Chocolate Sea Salt</b> Deep, rounded chocolate notes from Valrhona cocoa and dark chocolate.</li><li><b>Matcha Raspberry</b> Earthy matcha meets bright, tart raspberry.</li><li><b>Hojicha Black Sesame</b> Toasty and nutty, with caramel-like complexity.</li><li><b>Black Forest Griottine</b> Dark chocolate and kirsch-infused wild cherries.</li></ul>
+              <p class="note">Boxes of 6, 10 or 12 · Contains wheat, eggs, milk, nuts and sesame, depending on flavour.</p></details>
+            <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuai439300030agmkaaqby3f">Order <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="product reveal" data-product="madeleines" data-name="Sweet Madeleines">
+          <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvjm5ek7000002rjgmve0z0z.jpeg?width=900" alt="Raspberry and pistachio madeleines" width="1086" height="1448"><figcaption>Tender · buttery · finished with fine chocolate</figcaption></figure>
+          <div class="product-body">
+            <div class="product-top"><h4>Sweet Madeleines</h4><p class="price muted">Coming soon</p></div>
+            <p class="tagline">A French classic with thoughtful flavour pairings. Boxes of 6, 10 or 12.</p>
+            <details class="disclosure small"><summary>Read more</summary><p>Fragrant tea notes, rich chocolate and bright fruit, made for a quiet afternoon pause.</p>
+              <ul class="flavours"><li><b>Classic Almond</b> A timeless classic, topped with almond flakes.</li><li><b>Raspberry Pistachio</b> Whole raspberry, finished with crushed pistachios.</li><li><b>Matcha Cranberry</b> Earthy matcha sponge with tart cranberries.</li><li><b>Dark Chocolate Cherry</b> Dark chocolate sponge with kirsch-infused cherries.</li><li><b>Earl Grey &amp; Dulcey</b> <i>Seasonal.</i> Bergamot sponge in Valrhona Dulcey blond chocolate, with crushed pecans.</li><li><b>Double Raspberry</b> <i>Seasonal.</i> Raspberry sponge in Valrhona raspberry couverture, finished with rose petals.</li></ul></details>
+            <button class="add" type="button" disabled>Available soon</button>
+          </div>
+        </article>
+        <article class="product reveal" data-product="scones" data-name="Savoury Scones">
+          <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvgno5x7000102o1ac9hhp72.jpeg?width=900" alt="Square-cut savoury cheese scones on a cooling rack" width="1527" height="2036"><figcaption>Flaky layers · melted cheese · fresh herbs</figcaption></figure>
+          <div class="product-body">
+            <div class="product-top"><h4>Savoury Scones</h4><p class="price muted">Seasonal drop</p></div>
+            <p class="tagline">A British classic with an artisanal, savoury twist.</p>
+            <details class="disclosure small"><summary>Read more</summary><p>Best enjoyed warm, for a savoury breakfast or an afternoon pause alongside your favourite brew.</p></details>
+            <button class="add" type="button" disabled>Next drop soon</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 TIRAMISU -->
+    <section class="category" id="tiramisu" aria-labelledby="tira-title">
+      <div class="feature reverse reveal">
+        <figure class="feature-img"><img loading="lazy" src="https://cdn3.take.app/media/cmvfsrr4u000002o9dw29fp9t.jpeg?width=1600" alt="A mio·rie tiramisu tub with a spoon" width="1179" height="624"></figure>
+        <div class="feature-copy">
+          <p class="eyebrow">03 · Tiramisu · Little mio·rie indulgence</p>
+          <h2 class="split" id="tira-title">Two expressions.<br><em>One little indulgence.</em></h2>
+          <p>An elegant favourite at our own table, made for lingering moments, quiet celebrations or that occasional treat. One stays true to the Italian classic. The other is a refined matcha interpretation.</p>
+          <p class="signoff">Individual 12 oz tubs, for one or two.</p>
+        </div>
+      </div>
+      <span class="shop-anchor" id="tiramisu-shop"></span>
+        <p class="swipe-hint" aria-hidden="true">Swipe</p>
+        <div class="product-grid two">
+        <article class="product reveal" data-product="tiramisu-baileys" data-name="Baileys Classic Tiramisu" data-price="20">
+          <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvo3v3re005908jv5egg5evl.jpeg?width=1000" alt="A slice of Baileys Classic Tiramisu dusted with cocoa" width="1024" height="1024"><figcaption>Espresso · Baileys · velvety mascarpone · Valrhona cocoa</figcaption></figure>
+          <div class="product-body">
+            <div class="product-top"><h4><svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6Z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17M8 3c0 2 2 2 2 4m3-4c0 2 2 2 2 4"/></svg>Baileys Classic Tiramisu</h4><p class="price">S$20</p></div>
+            <p class="tagline">A luxurious take on the Italian classic.</p>
+            <details class="disclosure small"><summary>Read more</summary>
+              <p>Italian ladyfingers soaked in espresso and Baileys Espresso Crème, layered with velvety mascarpone cream lightened with French cream.</p>
+              <p>Rich yet delicate, the mellow bitterness of coffee balances the gentle sweetness of the cream, while a warm whisper of dark rum adds depth. Finished with a generous dusting of dark Valrhona cocoa.</p>
+              <p class="note">12 oz tub · Contains alcohol, wheat, dairy and eggs.</p>
+            </details>
+            <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuah3wij000a0agmv6senc8r">Order <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="product reveal" data-product="tiramisu-matcha" data-name="Matcha-Misu" data-price="20">
+          <figure class="frame"><img loading="lazy" src="https://cdn3.take.app/media/cmvo3xa7t000109jkgm61hlz5.jpeg?width=1000" alt="A slice of Matcha-Misu dusted with matcha beside its tub" width="1024" height="1024"><figcaption>Uji matcha · silky mascarpone · gently bittersweet</figcaption></figure>
+          <div class="product-body">
+            <div class="product-top"><h4><svg class="mini-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19C5 10 11 4 20 4c0 9-6 15-15 15Z"/><path d="M5 19 14 10"/></svg>Matcha-Misu</h4><p class="price">S$20</p></div>
+            <p class="tagline">A refined matcha interpretation of the Italian classic.</p>
+            <details class="disclosure small"><summary>Read more</summary>
+              <p>Layers of Italian ladyfingers soaked in Uji matcha, nestled between silky matcha-infused Italian mascarpone custard cream, folded with French whipping cream for a delicate, airy finish.</p>
+              <p>Earthy and gently bittersweet, with subtle umami notes rounding off the richness of the cream. Each spoonful brings a quiet balance of depth and lightness, finished with a fine dusting of matcha.</p>
+              <p class="note">12 oz tub · Contains wheat, dairy and eggs.</p>
+            </details>
+            <a class="add" data-add href="https://take.app/miorie_bakes/p/cmuahy18h00000agm1t0zv2gr">Order <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- ORDERING -->
+<section class="ordering" id="ordering">
+  <div class="wrap">
+    <p class="eyebrow">From our kitchen to your table</p>
+    <h2 class="split">Ordering, in<br><em>three quiet steps.</em></h2>
+    <div class="steps">
+      <div class="reveal"><span>01</span><h3>Fill your bag</h3><p>Choose your loaves and treats above, then tap Order to add them in our shop. Everything is baked to order in small batches.</p></div>
+      <div class="reveal"><span>02</span><h3>Pick a collection day</h3><p>Sourdough takes time, so please allow about four days from order to pickup.</p></div>
+      <div class="reveal"><span>03</span><h3>Pay &amp; collect</h3><p>Check out and pay in our shop, then collect in eastern Singapore. Pickup details come with your order confirmation.</p></div>
+    </div>
+    <a class="button" href="#bakes">Buy our bakes</a>
+  </div>
+</section>
+
+<section class="faq wrap">
+  <div class="reveal"><p class="eyebrow">A few things to know</p><h2>Before you order.</h2></div>
+  <div class="questions">
+    <details><summary>How far ahead should I order?</summary><p>For sourdough, please allow about four days from order to pickup. Available dates are shown at checkout.</p></details>
+    <details><summary>Where do I collect my bakes?</summary><p>Pickup is in eastern Singapore. The exact address is sent with your order confirmation.</p></details>
+    <details><summary>Are all the treats available every week?</summary><p>Sourdough and tiramisu are baked to order. Madeleines and savoury scones are seasonal drops, announced here and on our shop.</p></details>
+    <details><summary>How do I keep and reheat my sourdough?</summary><p>Slice and store what you’ll enjoy within 2 days in the bread bag at room temperature. Freeze remaining slices in a sealed bag or container, placing baking paper between slices to prevent sticking.</p><p><b>Fresh:</b> toast for 3 minutes, or warm in an air fryer or pre-heated oven at 180°C for 4–5 minutes. <b>Frozen:</b> use the toaster’s defrost setting for 3–4 minutes, or spritz with water and warm at 180°C for 5–8 minutes.</p></details>
+    <details><summary>Where can I check ingredients or allergens?</summary><p>Each bake’s “Read more” lists its key ingredients. If you have an allergy or dietary question, please contact us before ordering.</p></details>
+  </div>
+</section>
+
+<section class="contact wrap reveal" id="contact">
+  <p class="eyebrow">Contact</p>
+  <h2>A question before you order?</h2>
+  <p>We’d love to hear from you. Message us through our shop, or say hello on Instagram.</p>
+  <div class="contact-links"><a class="text-link" href="https://take.app/miorie_bakes">Message us on our shop ↗</a><a class="text-link" href="https://instagram.com/miorie_bakes">Instagram @miorie_bakes ↗</a></div>
+</section>
+
+<section class="closing">
+  <div class="closing-bg" data-parallax aria-hidden="true"></div>
+  <div class="closing-copy reveal">
+    <p class="eyebrow">Made with care. Meant to be savoured.</p>
+    <h2>Something lovely<br><em>for your table.</em></h2>
+    <a class="button light" href="#bakes">Buy our bakes</a>
+  </div>
+</section>
+</main>
+
+<footer class="footer wrap">
+  <a class="wordmark" href="#">mio·rie<small>micro-boulangerie</small></a>
+  <p>Handcrafted in small batches.<br>Eastern Singapore.</p>
+  <a class="text-link" href="https://instagram.com/miorie_bakes">@miorie_bakes</a>
+  <small>© <span id="year">2026</span> mio·rie</small>
+</footer>
+
+<button class="mobile-bag button" type="button" data-open-cart data-onsite hidden>Your bag · <span data-bag-total>S$0</span></button>
+
+<!-- BAG + CHECKOUT DRAWER -->
+<div class="drawer-scrim" data-close-cart hidden></div>
+<aside class="drawer" id="drawer" aria-label="Your bag" aria-hidden="true" inert>
+  <div class="drawer-head">
+    <p class="drawer-title" data-drawer-title>Your bag</p>
+    <button type="button" class="icon-btn" data-close-cart aria-label="Close">×</button>
+  </div>
+
+  <div class="drawer-view" data-view="bag">
+    <ul class="bag-list" data-bag-list></ul>
+    <p class="bag-empty" data-bag-empty>Your bag is empty. <a href="#bakes" data-close-cart>Browse the bakes</a></p>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Subtotal</span><b data-subtotal>S$0.00</b></div>
+      <p class="fine">Pickup in eastern Singapore. Please allow about four days.</p>
+      <button type="button" class="button wide" data-goto="details" disabled data-checkout-btn>Checkout</button>
+    </div>
+  </div>
+
+  <form class="drawer-view" data-view="details" hidden novalidate>
+    <div class="form-grid">
+      <label>Full name<input name="name" autocomplete="name" required></label>
+      <label>Mobile (WhatsApp)<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[0-9 +]{8,}"></label>
+      <label class="full">Email, for your receipt<input name="email" type="email" autocomplete="email" required></label>
+      <label>Pickup date<input name="pickup" type="date" required data-pickup></label>
+      <label>Pickup time<select name="slot" required><option value="">Choose…</option><option>Morning (10am – 12pm)</option><option>Afternoon (2pm – 5pm)</option><option>Evening (6pm – 8pm)</option></select></label>
+      <label class="full">Notes (optional)<textarea name="notes" rows="2" placeholder="Allergies, gift message, anything we should know"></textarea></label>
+    </div>
+    <p class="form-error" data-form-error role="alert"></p>
+    <div class="drawer-foot">
+      <div class="total-row"><span>Total</span><b data-subtotal>S$0.00</b></div>
+      <button type="submit" class="button wide">Place order</button>
+      <button type="button" class="text-btn" data-goto="bag">← Back to bag</button>
+    </div>
+  </form>
+
+  <div class="drawer-view receipt" data-view="receipt" hidden>
+    <p class="eyebrow">Thank you</p>
+    <h3>Your order is in.</h3>
+    <p class="order-no">Order <b data-order-no></b></p>
+    <div class="paynow">
+      <p><b>Pay by PayNow</b> to confirm your bake slot.</p>
+      <p data-paynow-line></p>
+      <p class="fine">Please put your order number in the payment reference.</p>
+    </div>
+    <ul class="bag-list receipt-list" data-receipt-list></ul>
+    <div class="total-row"><span>Total</span><b data-receipt-total></b></div>
+    <p class="fine" data-receipt-meta></p>
+    <p class="demo-note" data-demo-note hidden>Preview mode: this order was not sent anywhere. Connect the order sheet in <code>script.js</code> to go live.</p>
+    <button type="button" class="button wide" data-close-cart>Done</button>
+  </div>
+</aside>
+
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="script.js" defer></script>
+</body>
+</html>
