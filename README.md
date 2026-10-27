@@ -8,12 +8,12 @@ From this folder, run `python3 -m http.server 3000` and open http://localhost:30
 
 ## Pages
 
-- `index.html` (shop): one-photo hero (cranberry crumb) → short name intro with a "Read our story" link → four brand values → Buy our bakes, grouped under Boulangerie / Pastries / Tiramisu tabs (sourdough's three promises sit at the top of Boulangerie) → kitchen polaroids → bread care → how to order → FAQ → contact → closing.
+- `index.html` (shop): slideshow hero (Sourdough / Small treats / Little indulgence) → short name intro with a "Read our story" link → four brand values → Explore our bakes, grouped under Boulangerie / Pastries / Tiramisu tabs (sourdough's three promises sit at the top of Boulangerie) → kitchen polaroids → bread care → how to order → FAQ → contact → closing.
 - `story.html` (Our story): short, tidied versions of the baker's drafts: how it began, bread philosophy, kitchen polaroids, two ways we bake, small treats, tiramisu, personal touch. Each ends in a soft link to the matching bakes.
 
 Brand board ("Olive edition"): olive #5A5F3A, walnut #4B3621, ivory #F4F1E8; Cormorant Garamond + Montserrat. Emphasis is by colour (`.key`, `em`), not size.
 
-The header's "Buy our bakes" dropdown, the phone menu and the story-page buttons open the right tab and land on the products. Only each product's Order button goes to Take App.
+The header's "Explore our bakes" dropdown, the phone menu and the story-page buttons open the right tab and land on the products. Only each product's Order button goes to Take App.
 
 Product photos load from `cdn3.take.app`; everything else is the baker's own, resized in `assets/`.
 
