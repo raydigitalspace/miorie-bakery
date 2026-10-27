@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/butter-loaf-crumb.jpg" fetchpriority="high">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -67,19 +67,28 @@
   </div>
 </section>
 
-<!-- THE NAME: photo beside a large mio 美 · rie that assembles as it scrolls into view -->
+<!-- THE NAME: a pinned, scroll-told chapter. The photo holds still while mio, 美 and rie light up in turn. -->
 <section class="name-chapter" id="story" aria-label="About mio·rie">
-  <figure class="name-visual"><img loading="lazy" src="assets/img/packaging.jpg" alt="mio·rie packaging, tied by hand" width="731" height="1400"></figure>
-  <div class="name-copy">
-    <p class="eyebrow">Our story</p>
-    <p class="name-word" aria-label="mio·rie"><span class="nw-mio">mio</span><span class="nw-mei">美</span><span class="nw-dot">·</span><span class="nw-rie">rie</span></p>
-    <p class="name-say"><small>Pronounced</small>“mee-oh-ree”</p>
-    <ul class="name-lines">
-      <li><b>mio (美)</b> means beautiful, perfect.</li>
-      <li><b>rie</b> is a nod to boulangerie.</li>
-    </ul>
-    <p class="name-meaning">A name that celebrates beauty in the art of slow baking.</p>
-    <a class="text-link" href="story.html">Read our story</a>
+  <div class="name-sticky">
+    <div class="name-visual" aria-hidden="true">
+      <img src="assets/img/packaging.jpg" alt="" data-step-img="0" class="active">
+      <img src="assets/img/scored-loaf.jpg" alt="" data-step-img="1" loading="lazy">
+      <img src="assets/img/starter.jpg" alt="" data-step-img="2" loading="lazy">
+      <img src="assets/img/treats-table.jpg" alt="" data-step-img="3" loading="lazy">
+    </div>
+    <div class="name-copy">
+      <p class="eyebrow">Our story</p>
+      <p class="name-word" aria-hidden="true"><span class="nw-mio">mio</span><span class="nw-mei">美</span><span class="nw-dot">·</span><span class="nw-rie">rie</span></p>
+      <p class="name-say">pronounced “<i>mee-oh-ree</i>”</p>
+      <ol class="name-steps">
+        <li data-step="0"><b>mio (美)</b> means beautiful, perfect.</li>
+        <li data-step="1"><b>rie</b> is a nod to boulangerie.</li>
+        <li data-step="2">A name that celebrates beauty in the art of <b>slow baking</b>.</li>
+        <li data-step="3">Handcrafted in small batches, from my home kitchen <b>to your table</b>.</li>
+      </ol>
+      <div class="name-progress" aria-hidden="true"><span data-name-progress></span></div>
+      <a class="text-link story-more" href="story.html">Read our story</a>
+    </div>
   </div>
 </section>
 
@@ -365,6 +374,6 @@
 </aside>
 
 <div class="toast" data-toast role="status" aria-live="polite"></div>
-<script src="script.js" defer></script>
+<script src="script.js?v=8" defer></script>
 </body>
 </html>

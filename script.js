@@ -104,10 +104,41 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
   }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  $$('.reveal, .split, .name-chapter').forEach(el => io.observe(el));
+  $$('.reveal, .split').forEach(el => io.observe(el));
 } else {
-  $$('.reveal, .split, .name-chapter').forEach(el => el.classList.add('visible'));
+  $$('.reveal, .split').forEach(el => el.classList.add('visible'));
 }
+
+// The name chapter: as it scrolls past, step through mio (美), rie, then the whole name.
+(() => {
+  const chapter = $('.name-chapter');
+  if (!chapter) return;
+  const steps = $$('.name-steps li', chapter);
+  const stepImgs = $$('[data-step-img]', chapter);
+  const progress = $('[data-name-progress]', chapter);
+  function setStep(step) {
+    if (chapter.dataset.step === String(step)) return;
+    chapter.dataset.step = step;
+    steps.forEach((li, i) => {
+      li.classList.toggle('active', i === step);
+      li.classList.toggle('past', i < step);
+    });
+    const img = stepImgs.filter(im => +im.dataset.stepImg <= step).pop();
+    stepImgs.forEach(im => im.classList.toggle('active', im === img));
+  }
+  function frame() {
+    const r = chapter.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+    setStep(Math.min(steps.length - 1, Math.floor(p * steps.length * 0.999)));
+    progress.style.transform = `scaleX(${p})`;
+  }
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); }
+  }, { passive: true });
+  addEventListener('resize', frame);
+  frame();
+})();
 
 // Scroll-driven effects: story-page photo zoom and closing parallax.
 (() => {
