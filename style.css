@@ -123,12 +123,34 @@ body.menu-open{overflow:hidden}
 .motion .hero-title a:nth-child(1){animation-delay:.35s}.motion .hero-title a:nth-child(2){animation-delay:.5s}.motion .hero-title a:nth-child(3){animation-delay:.65s}
 .motion .hero-intro,.motion .hero-actions{animation:rise 1.1s var(--ease-out) both .85s}
 
-/* Short introduction, with the full story one click away. */
-.intro{text-align:center;max-width:640px;padding:clamp(80px,9vw,120px) 0 clamp(60px,7vw,90px)}
-.intro-name{font:400 clamp(30px,3vw,38px)/1 var(--serif);letter-spacing:.22em;color:var(--walnut);margin:0 0 10px}
-.intro-name span{color:var(--olive);font-size:.6em;letter-spacing:0;vertical-align:.35em;margin:0 .1em 0 -.1em}
-.intro-say{font:italic 400 16px var(--serif);color:var(--muted);margin:0 0 26px}
-.intro-line{color:var(--muted);margin:0 auto 26px;max-width:520px}
+/* The name: a photo beside a large mio 美 · rie. Each part settles in turn once in view. */
+.name-chapter{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(40px,6vw,96px);padding:clamp(70px,8vw,110px) var(--gutter);background:var(--paper)}
+.name-visual{margin:0;overflow:hidden;height:min(78vh,720px)}
+.name-visual img{width:100%;height:100%;object-position:50% 30%;transition:transform 2.4s var(--ease-out)}
+.name-word{font:400 clamp(64px,8vw,118px)/.95 var(--serif);display:flex;align-items:baseline;gap:.05em;margin:0 0 12px;color:var(--walnut)}
+.name-word span{display:inline-block}
+.nw-mei{font-size:.4em;color:var(--olive);transform:translateY(-1em)}
+.nw-dot{color:var(--olive)}
+.name-say{font:italic 400 18px var(--serif);color:var(--muted);margin:0 0 30px}
+.name-lines{list-style:none;margin:0 0 30px;padding:0;max-width:440px;border-top:1px solid var(--line)}
+.name-lines li{padding:13px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+.name-lines b{font:400 19px var(--serif);color:var(--olive)}
+.motion .name-visual img{transform:scale(1.12)}
+.motion .name-chapter.visible .name-visual img{transform:none}
+.motion .name-word span{opacity:.1;filter:blur(3px);transition:opacity 1s var(--ease),filter 1s var(--ease),transform 1.2s var(--ease-out)}
+.motion .name-word .nw-mei{transform:translateY(-.2em)}
+.motion .name-chapter.visible .name-word span{opacity:1;filter:none}
+.motion .name-chapter.visible .nw-mei{transform:translateY(-1em);transition-delay:.5s}
+.motion .name-chapter.visible .nw-dot{transition-delay:.85s}
+.motion .name-chapter.visible .nw-rie{transition-delay:1.05s}
+.motion .name-say,.motion .name-lines li,.motion .name-copy .text-link{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease),transform 1s var(--ease-out)}
+.motion .name-chapter.visible .name-say{opacity:1;transform:none;transition-delay:1.3s}
+.motion .name-chapter.visible .name-lines li{opacity:1;transform:none}
+.motion .name-chapter.visible .name-lines li:nth-child(1){transition-delay:1.5s}
+.motion .name-chapter.visible .name-lines li:nth-child(2){transition-delay:1.7s}
+.motion .name-chapter.visible .name-lines li:nth-child(3){transition-delay:1.9s}
+.motion .name-chapter.visible .name-copy .text-link{opacity:1;transform:none;transition-delay:2.1s}
+.name-chapter+.values-tag{margin-top:clamp(70px,8vw,110px)}
 
 /* Brand values: four icons, a line beneath each. */
 .values-tag{text-align:center;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--walnut);margin:0 0 34px}
@@ -276,7 +298,12 @@ details[open]>:not(summary){animation:fade-down .5s var(--ease-out)}
 .crumb-note{position:absolute;left:22px;bottom:16px;margin:0;font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--white);text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .crumb-panel{position:relative;z-index:1;margin-left:-12%;padding:clamp(34px,4vw,56px);background:rgba(244,241,232,.95);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line)}
 .crumb-panel>p:not(.eyebrow):not(.lede):not(.signoff):not(.pull){color:var(--muted)}
-.pull{font:italic 400 22px/1.3 var(--serif);color:var(--olive);margin:20px 0}
+.pull{font:italic 400 19px/1.4 var(--serif);color:var(--olive);margin:18px 0}
+/* Story panels: a small one-line title; the opening and ending lines carry the emphasis,
+   in the body font, bolder, so each section reads like a short poem. */
+.crumb-panel h2{font-size:clamp(25px,2.2vw,31px);line-height:1.2;margin-bottom:22px}
+.crumb-panel .lede{font:500 15px/1.75 var(--sans);color:var(--walnut);margin-bottom:16px}
+.crumb-panel .signoff{font:500 16px/1.7 var(--sans);color:var(--olive);margin:22px 0 26px}
 .crumb-story.flip{grid-template-columns:.95fr 1.05fr}
 .crumb-story.flip .crumb-image{order:2}
 .crumb-story.flip .crumb-panel{margin-left:0;margin-right:-12%}
@@ -392,7 +419,17 @@ details[open]>:not(summary){animation:fade-down .5s var(--ease-out)}
   .hero-foot{left:6%;right:6%;bottom:22px;gap:14px;flex-wrap:wrap}
   .hero-caption{min-width:0;font-size:14px;flex:1 0 100%}
   .values-tag{font-size:9px;letter-spacing:.2em;padding:0 8%;line-height:1.9}
-  .intro{width:84%}
+  .name-chapter{position:relative;display:flex;align-items:flex-end;min-height:92svh;padding:0 7% 54px;background:#2d241a;color:var(--white);overflow:hidden;isolation:isolate}
+  .name-visual{position:absolute;inset:0;height:auto;z-index:-1}
+  .name-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(36,26,16,.92) 0%,rgba(36,26,16,.66) 45%,rgba(36,26,16,.1) 75%)}
+  .name-copy .eyebrow{color:var(--gold)}
+  .name-word{font-size:72px;color:var(--white)}
+  .nw-mei,.nw-dot{color:var(--gold)}
+  .name-say{color:#e6dfcf;font-size:17px;margin-bottom:20px}
+  .name-lines,.name-lines li{border-color:rgba(251,249,243,.2)}
+  .name-lines li{color:#ece6d8;padding:11px 0}
+  .name-lines b{color:var(--gold)}
+  .name-copy .text-link{color:var(--white)}
   .values{grid-template-columns:repeat(2,1fr);row-gap:34px;width:84%}
   .kitchen figure{width:56vw;padding:9px 9px 0}
   .kitchen figcaption{font-size:15px;padding:10px 2px 13px}

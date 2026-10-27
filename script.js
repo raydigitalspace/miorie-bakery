@@ -104,9 +104,9 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
   }), { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  $$('.reveal, .split').forEach(el => io.observe(el));
+  $$('.reveal, .split, .name-chapter').forEach(el => io.observe(el));
 } else {
-  $$('.reveal, .split').forEach(el => el.classList.add('visible'));
+  $$('.reveal, .split, .name-chapter').forEach(el => el.classList.add('visible'));
 }
 
 // Scroll-driven effects: story-page photo zoom and closing parallax.
