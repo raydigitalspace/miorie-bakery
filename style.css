@@ -184,15 +184,34 @@ body.menu-open{overflow:hidden}
 .kitchen figure:hover img{transform:scale(1.05)}
 @keyframes ribbon{to{transform:translateX(-50%)}}
 
-/* The shop: grouped under tabs, two quiet columns of bakes. */
+/* The shop: grouped by category, two quiet columns of bakes. */
 .shop{padding:clamp(80px,9vw,130px) 0}
 .shop-head{text-align:center;margin-bottom:34px}
-.tabs{display:flex;justify-content:center;gap:clamp(18px,4vw,56px);border-bottom:1px solid var(--line);margin:0 auto clamp(50px,6vw,80px);max-width:720px}
-.tab{background:none;border:0;padding:14px 2px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);position:relative;transition:color .4s}
-.tab:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--olive);transform:scaleX(0);transition:transform .5s var(--ease-out)}
-.tab[aria-selected=true]{color:var(--olive)}
-.tab[aria-selected=true]:after{transform:scaleX(1)}
-.tab:hover{color:var(--walnut)}
+.shop-head>p:not(.eyebrow){color:var(--muted);margin-top:14px}
+/* Category cards (from the first version): each opens its group of bakes below. */
+.category-menu{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);margin:0 0 clamp(60px,7vw,100px)}
+.category-menu a{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 18px 30px;position:relative;transition:background .5s var(--ease)}
+.category-menu a+a{border-left:1px solid var(--line)}
+.category-menu a:hover,.category-menu a[aria-current]{background:var(--paper)}
+.category-menu svg{width:54px;height:54px;fill:none;stroke:var(--olive);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px;transition:transform .6s var(--ease-out)}
+.category-menu a:hover svg{transform:translateY(-4px) rotate(-4deg)}
+.category-menu small{font-size:11px;letter-spacing:.24em;color:var(--olive)}
+.category-menu strong{font:500 28px/1.2 var(--serif);color:var(--walnut);margin:6px 0}
+.category-menu span{font-size:13px;color:var(--muted)}
+.category-menu a:after{content:'Shop now →';margin-top:14px;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--olive);opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease),transform .5s var(--ease-out)}
+.category-menu a:hover:after,.category-menu a:focus-visible:after,.category-menu a[aria-current]:after{opacity:1;transform:none}
+@media(hover:none){.category-menu a:after{opacity:1;transform:none}}
+@media(max-width:760px){
+  .category-menu{grid-template-columns:1fr 1fr}
+  .category-menu a{align-items:flex-start;padding:22px 14px;text-align:left}
+  .category-menu a+a{border-left:0}
+  .category-menu a:nth-child(even){border-left:1px solid var(--line)}
+  .category-menu a:nth-child(n+3){border-top:1px solid var(--line)}
+  .category-menu svg{width:36px;height:36px;margin-bottom:10px}
+  .category-menu strong{font-size:21px;line-height:1.15;margin:4px 0}
+  .category-menu span{font-size:12px;line-height:1.5}
+  .category-menu a:after{margin-top:10px}
+}
 .panel{scroll-margin-top:90px}
 .tabbed .panel:not(.active){display:none}
 .tabbed .panel.active{animation:fade-up .7s var(--ease-out)}
@@ -457,9 +476,7 @@ details[open]>:not(summary){animation:fade-down .5s var(--ease-out)}
   .kitchen-row{padding-bottom:22px}
   .kitchen figure:nth-child(3n+2){--lift:20px}
   .kitchen-track{animation-duration:55s}
-  .tabs{gap:22px}
-  .tab{font-size:9.5px;letter-spacing:.2em}
-  .props{grid-template-columns:1fr}
+      .props{grid-template-columns:1fr}
   .props li{flex-direction:row;align-items:flex-start;text-align:left;gap:16px;padding:20px 0}
   .props li+li{border-left:0;border-top:1px solid var(--line)}
   .props .icon{width:34px;height:34px}

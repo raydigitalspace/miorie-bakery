@@ -38,7 +38,7 @@ onScrollHeader();
   addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) set(false); });
 })();
 
-// Close the "Buy our bakes" dropdown once a link in it is chosen.
+// Close a dropdown once a link in it is chosen.
 $$('.drop a').forEach(link => link.addEventListener('click', () => {
   link.blur();
   const drop = link.closest('.drop');
@@ -168,40 +168,30 @@ if (!reduceMotion && 'IntersectionObserver' in window) {
   frame();
 })();
 
-// Shop tabs: Boulangerie / Pastries / Tiramisu. Links to #artisan, #pastries and so on
-// open the right tab first, so the dropdown and story-page links land on the bakes.
+// Shop menu: the four category cards open one group of bakes at a time. Links to
+// #artisan, #pastries and so on open the right group first, so the dropdown and
+// story-page links land on the bakes.
 const openShopFor = (() => {
-  const tablist = $('[data-tabs]');
-  if (!tablist) return () => null;
-  const tabs = $$('[role=tab]', tablist);
-  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
-  const select = i => {
-    tabs.forEach((tab, k) => {
-      tab.setAttribute('aria-selected', String(k === i));
-      tab.tabIndex = k === i ? 0 : -1;
-      panels[k].classList.toggle('active', k === i);
-    });
+  const menu = $('[data-shop-menu]');
+  if (!menu) return () => null;
+  const cards = $$('a', menu);
+  const panels = $$('.panel', menu.closest('.shop'));
+  const panelOf = el => panels.find(p => p.contains(el));
+  const select = (panel, card) => {
+    panels.forEach(p => p.classList.toggle('active', p === panel));
+    cards.forEach(c => c === card ? c.setAttribute('aria-current', 'true') : c.removeAttribute('aria-current'));
     // Panels revealed later still need their cards shown.
-    $$('.reveal, .split', panels[i]).forEach(el => el.classList.add('visible'));
+    $$('.reveal, .split', panel).forEach(el => el.classList.add('visible'));
   };
-  tablist.hidden = false;
-  tablist.closest('.shop').classList.add('tabbed');
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => select(i));
-    tab.addEventListener('keydown', e => {
-      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
-      if (!step) return;
-      const next = (i + step + tabs.length) % tabs.length;
-      select(next);
-      tabs[next].focus();
-    });
-  });
-  select(0);
+  menu.closest('.shop').classList.add('tabbed');
+  select(panels[0], cards[0]);
   return id => {
     const target = id && document.getElementById(id);
-    const panel = target && panels.find(p => p.contains(target));
-    if (panel) select(panels.indexOf(panel));
-    return panel ? target : null;
+    const panel = target && panelOf(target);
+    if (!panel) return null;
+    const card = cards.find(c => c.hash === '#' + id) || cards.find(c => panelOf(document.getElementById(c.hash.slice(1))) === panel);
+    select(panel, card);
+    return target;
   };
 })();
 document.addEventListener('click', e => {
