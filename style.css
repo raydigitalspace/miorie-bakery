@@ -455,6 +455,14 @@ details[open]>:not(summary){animation:fade-down .5s var(--ease-out)}
   .hero-intro,.hero-title a:after{display:none}
   .hero-panel{width:auto;max-width:100%}
   .hero-title a{gap:12px}
+  /* Phones: no box over the photo; the words sit on a soft shade at the bottom,
+     with Explore our bakes first and Our story beneath it. */
+  .hero.slideshow:after{background:linear-gradient(180deg,rgba(36,26,16,.05) 22%,rgba(36,26,16,.6) 48%,rgba(36,26,16,.86) 75%)}
+  .hero-panel{text-shadow:0 1px 14px rgba(20,14,8,.45)}
+  .hero-panel{background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0}
+  .hero-panel .eyebrow{margin-bottom:14px}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:20px}
+  .hero-actions .button{order:-1}
   .hero-foot{left:6%;right:6%;bottom:22px;gap:14px;flex-wrap:wrap}
   .hero-caption{min-width:0;font-size:14px;flex:1 0 100%}
   .values-tag{font-size:9px;letter-spacing:.2em;padding:0 8%;line-height:1.9}
