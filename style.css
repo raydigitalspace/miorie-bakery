@@ -452,15 +452,16 @@ details[open]>:not(summary){animation:fade-down .5s var(--ease-out)}
   .hero.slideshow{align-items:flex-end;min-height:86svh;padding:40px 6% 104px}
   .hero-panel{padding:28px 24px 26px}
   .hero-title{font-size:22px;gap:0;margin-bottom:22px}
-  .hero-intro,.hero-title a:after{display:none}
+  .hero-title a:after{display:none}
+  .hero-intro{font-size:13px;line-height:1.75;margin-bottom:24px}
   .hero-panel{width:auto;max-width:100%}
   .hero-title a{gap:12px}
   /* Phones: no box over the photo; the words sit on a soft shade at the bottom,
      with Explore our bakes first and Our story beneath it. */
-  .hero.slideshow:after{background:linear-gradient(180deg,rgba(36,26,16,.05) 22%,rgba(36,26,16,.6) 48%,rgba(36,26,16,.86) 75%)}
+  .hero.slideshow:after{background:linear-gradient(180deg,rgba(36,26,16,.04) 14%,rgba(36,26,16,.58) 38%,rgba(36,26,16,.86) 66%)}
   .hero-panel{text-shadow:0 1px 14px rgba(20,14,8,.45)}
   .hero-panel{background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0}
-  .hero-panel .eyebrow{margin-bottom:14px}
+  .hero-panel .eyebrow{display:none}
   .hero-actions{flex-direction:column;align-items:flex-start;gap:20px}
   .hero-actions .button{order:-1}
   .hero-foot{left:6%;right:6%;bottom:22px;gap:14px;flex-wrap:wrap}
